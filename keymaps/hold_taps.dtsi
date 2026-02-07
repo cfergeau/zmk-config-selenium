@@ -1,0 +1,124 @@
+#include "timing.dtsi"
+
+// clang-format off
+
+/**
+ * Layers
+ */
+
+// Human-readable constants for the layer indexes.
+// Make sure to update this table if you edit the order / number of layers in the keymap.
+#define BASE_LAYER     0
+#define SYMBOLS_LAYER  1
+#define VIM_NAV_LAYER  2
+#define NUM_NAV_LAYER  3
+#define NUM_ROW_LAYER  4
+#define FUNCTION_LAYER 5
+
+// Potentially used by other keymaps deriving from this one, who may add extra layers.
+// Make sure this stays equal to <index_of_last_layer> + 1
+#define EXTRA_LAYERS_START_INDEX 6
+
+
+/**
+ * Home Rew
+ */
+
+#if !defined HT_NONE && !defined HT_THUMB_TAPS && !defined HT_HOME_ROW_MODS
+#define HT_HOME_ROW_MODS
+#endif
+
+#ifdef HT_HOME_ROW_MODS
+  #define HRM_S &hrm LGUI S
+  #define HRM_D &hrm LCTL D
+  #define HRM_F &hrm LALT F
+  #define HRM_J &hrm LALT J
+  #define HRM_K &hrm RCTL K
+  #define HRM_L &hrm RGUI L
+#else
+  #define HRM_S &kp S
+  #define HRM_D &kp D
+  #define HRM_F &kp F
+  #define HRM_J &kp J
+  #define HRM_K &kp K
+  #define HRM_L &kp L
+#endif
+
+#ifdef HRM_SHIFT
+  #define HRM_A    &hrm LSHIFT A
+  #define HRM_SEMI &hrm RSHIFT SEMI
+#else
+  #define HRM_A    &kp A
+  #define HRM_SEMI &kp SEMI
+#endif
+
+
+/**
+ * Thumb Keys
+ */
+
+#ifdef VIM_NAVIGATION
+  #define CHOSEN_NAV_LAYER VIM_NAV_LAYER
+  #define CHOSEN_NUM_LAYER NUM_ROW_LAYER
+  #define CHOSEN_HRM_LAYER NUM_ROW_LAYER
+#else
+  #define CHOSEN_NAV_LAYER NUM_NAV_LAYER
+  #define CHOSEN_NUM_LAYER NUM_NAV_LAYER
+  #define CHOSEN_HRM_LAYER FUNCTION_LAYER
+#endif
+
+#ifdef LEFT_HAND_SPACE
+  #define LEFT_THUMB_LT   &hrm LCTL SPACE
+  #define RIGHT_THUMB_LT  &magic_backspace
+  #define LEFT_THUMB_HRM  &lt CHOSEN_NAV_LAYER SPACE
+  #define RIGHT_THUMB_HRM &magic_backspace
+#else
+  #define LEFT_THUMB_LT   &mt LCTL BACKSPACE
+  #define RIGHT_THUMB_LT  &lt CHOSEN_NAV_LAYER SPACE
+  #define LEFT_THUMB_HRM  &sc CHOSEN_NAV_LAYER BACKSPACE
+  #define RIGHT_THUMB_HRM &lt CHOSEN_NAV_LAYER SPACE
+#endif
+
+#ifdef HT_NONE
+  #define LEFT_THUMB_TUCK    &kp LALT
+  #define LEFT_THUMB_HOME    &kp LCTL
+  #define LEFT_THUMB_REACH   &kp LGUI
+  #define RIGHT_THUMB_REACH  &mo CHOSEN_NAV_LAYER
+  #define RIGHT_THUMB_HOME   &kp SPACE
+  #define RIGHT_THUMB_TUCK   &mo SYMBOLS_LAYER
+#elifdef HT_THUMB_TAPS
+  #define LEFT_THUMB_TUCK    &EZ_SK(LSHIFT)
+  #define LEFT_THUMB_HOME    LEFT_THUMB_LT
+  #define LEFT_THUMB_REACH   &mt LGUI TAB
+  #define RIGHT_THUMB_REACH  &mt LALT ENTER
+  #define RIGHT_THUMB_HOME   RIGHT_THUMB_LT
+  #define RIGHT_THUMB_TUCK   &EZ_SL(SYMBOLS_LAYER)
+#elifdef HT_HOME_ROW_MODS
+  #define LEFT_THUMB_TUCK    &EZ_SK(LSHIFT)
+  #define LEFT_THUMB_HOME    LEFT_THUMB_HRM
+  #define LEFT_THUMB_REACH   &sc CHOSEN_HRM_LAYER TAB
+  #define RIGHT_THUMB_REACH  &sc CHOSEN_HRM_LAYER ENTER
+  #define RIGHT_THUMB_HOME   RIGHT_THUMB_HRM
+  #define RIGHT_THUMB_TUCK   &EZ_SL(SYMBOLS_LAYER)
+#endif
+
+
+/ {
+  behaviors {
+    magic_backspace: magic_backspace {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sc NUM_NAV_LAYER BACKSPACE>, <&lt NUM_NAV_LAYER SPACE>;
+      mods = <MOD_LSFT>;
+      keep-mods = <MOD_LSFT>;
+    };
+
+    magic_backspace_vim: magic_backspace_vim {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sc VIM_NAV_LAYER BACKSPACE>, <&lt VIM_NAV_LAYER SPACE>;
+      mods = <MOD_LSFT>;
+      keep-mods = <MOD_LSFT>;
+    };
+  };
+};
