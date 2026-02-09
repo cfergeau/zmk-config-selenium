@@ -1,4 +1,5 @@
-#include "timing.dtsi"
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
 
 // clang-format off
 
@@ -24,11 +25,13 @@
  * Home Rew
  */
 
-#if !defined HT_NONE && !defined HT_THUMB_TAPS && !defined HT_HOME_ROW_MODS
+#if !defined HT_NONE && !defined HT_THUMB_TAPS && !defined HT_HOME_ROW_MODS && !defined HT_COMPACT
 #define HT_HOME_ROW_MODS
+#elif defined HT_NONE + defined HT_THUMB_TAPS + defined HT_HOME_ROW_MODS + defined HT_COMPACT > 1
+#error "Please select only up to one hold-tap configuration at a time"
 #endif
 
-#ifdef HT_HOME_ROW_MODS
+#if defined HT_HOME_ROW_MODS || defined HT_COMPACT
   #define HRM_S &hrm LGUI S
   #define HRM_D &hrm LCTL D
   #define HRM_F &hrm LALT F
@@ -61,64 +64,171 @@
   #define NAV_LAYER VIM_NAV_LAYER
   #define NUM_LAYER NUM_ROW_LAYER
   #define HRM_LAYER NUM_ROW_LAYER
+  #define S34_LAYER NUM_ROW_LAYER
   #define REACH_TAP ESCAPE
 #else
   #define NAV_LAYER NUM_NAV_LAYER
   #define NUM_LAYER NUM_NAV_LAYER
   #define HRM_LAYER FUNCTION_LAYER
+  #define S34_LAYER NUM_NAV_LAYER
   #define REACH_TAP TAB
 #endif
 
-#ifdef LEFT_HAND_SPACE
-  #define LEFT_THUMB_LT   &hrm LCTL SPACE
-  #define RIGHT_THUMB_LT  &magic_backspace
-  #define LEFT_THUMB_HRM  &lt NAV_LAYER SPACE
-  #define RIGHT_THUMB_HRM &magic_backspace
+#if defined HT_COMPACT && !defined VIM_NAVIGATION
+  #define SYM_NUM_LAYER &sc NUM_NAV_LAYER CAPSLOCK
 #else
-  #define LEFT_THUMB_LT   &mt LCTL BACKSPACE
-  #define RIGHT_THUMB_LT  &lt NAV_LAYER SPACE
-  #define LEFT_THUMB_HRM  &sc NAV_LAYER BACKSPACE
-  #define RIGHT_THUMB_HRM &lt NAV_LAYER SPACE
+  #define SYM_NUM_LAYER &EZ_SL(NUM_LAYER)
+#endif
+
+#ifdef LHAND_SPACE
+  #define LTHUMB_TT  &hrm LCTL SPACE
+  #define RTHUMB_TT  &magic_backspace
+  #define LTHUMB_HRM &lt NAV_LAYER SPACE
+  #define RTHUMB_HRM &magic_backspace
+  #define LTHUMB_S34 &lt NAV_LAYER SPACE
+  #define RTHUMB_S34 &magic_backspace_34_keys
+#else
+  #define LTHUMB_TT  &mt LCTL BACKSPACE
+  #define RTHUMB_TT  &magic_space
+  #define LTHUMB_HRM &sc NAV_LAYER BACKSPACE
+  #define RTHUMB_HRM &lt NAV_LAYER SPACE
+  #define LTHUMB_S34 &sc NAV_LAYER BACKSPACE
+  #define RTHUMB_S34 &lt S34_LAYER SPACE
 #endif
 
 #ifdef HT_NONE
-  #define LEFT_THUMB_TUCK    &kp LALT
-  #define LEFT_THUMB_HOME    &kp LCTL
-  #define LEFT_THUMB_REACH   &kp LGUI
-  #define RIGHT_THUMB_REACH  &mo NAV_LAYER
-  #define RIGHT_THUMB_HOME   &kp SPACE
-  #define RIGHT_THUMB_TUCK   &mo SYMBOLS_LAYER
+  #define LTHUMB_TUCK   &kp LALT
+  #define LTHUMB_HOME   &kp LCTL
+  #define LTHUMB_REACH  &kp LGUI
+  #define RTHUMB_REACH  &mo NAV_LAYER
+  #define RTHUMB_HOME   &kp SPACE
+  #define RTHUMB_TUCK   &mo SYMBOLS_LAYER
 #elifdef HT_THUMB_TAPS
-  #define LEFT_THUMB_TUCK    &EZ_SK(LSHIFT)
-  #define LEFT_THUMB_HOME    LEFT_THUMB_LT
-  #define LEFT_THUMB_REACH   &mt LGUI REACH_TAP
-  #define RIGHT_THUMB_REACH  &mt LALT ENTER
-  #define RIGHT_THUMB_HOME   RIGHT_THUMB_LT
-  #define RIGHT_THUMB_TUCK   &EZ_SL(SYMBOLS_LAYER)
+  #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
+  #define LTHUMB_HOME   LTHUMB_TT
+  #define LTHUMB_REACH  &mt LGUI REACH_TAP
+  #define RTHUMB_REACH  &mt LALT ENTER
+  #define RTHUMB_HOME   RTHUMB_TT
+  #define RTHUMB_TUCK   &EZ_SL(SYMBOLS_LAYER)
 #elifdef HT_HOME_ROW_MODS
-  #define LEFT_THUMB_TUCK    &EZ_SK(LSHIFT)
-  #define LEFT_THUMB_HOME    LEFT_THUMB_HRM
-  #define LEFT_THUMB_REACH   &sc HRM_LAYER REACH_TAP
-  #define RIGHT_THUMB_REACH  &sc HRM_LAYER ENTER
-  #define RIGHT_THUMB_HOME   RIGHT_THUMB_HRM
-  #define RIGHT_THUMB_TUCK   &EZ_SL(SYMBOLS_LAYER)
+  #define LTHUMB_TUCK   &EZ_SK(LSHIFT)
+  #define LTHUMB_HOME   LTHUMB_HRM
+  #define LTHUMB_REACH  &sc HRM_LAYER REACH_TAP
+  #define RTHUMB_REACH  &sc HRM_LAYER ENTER
+  #define RTHUMB_HOME   RTHUMB_HRM
+  #define RTHUMB_TUCK   &EZ_SL(SYMBOLS_LAYER)
+#elifdef HT_COMPACT
+  #define LTHUMB_TUCK   &mt LSHIFT REACH_TAP
+  #define LTHUMB_HOME   LTHUMB_S34
+  #define LTHUMB_REACH  LTHUMB_TUCK
+  #define RTHUMB_REACH  &sc SYMBOLS_LAYER ENTER
+  #define RTHUMB_HOME   RTHUMB_S34
+  #define RTHUMB_TUCK   RTHUMB_REACH
 #endif
 
 
+/**
+ * Timing is Key!
+ */
+
+#ifndef TAPPING_TERM
+#define TAPPING_TERM 300
+#endif
+
+#ifndef SHORT_TAPPING_TERM
+#define SHORT_TAPPING_TERM 150
+#endif
+
+#ifndef QUICK_TAP
+#define QUICK_TAP 200
+#endif
+
+#define EZ_SL(layer) bsl (layer) (layer)
+#define EZ_SK(mod)   bsk (mod) (mod)
+&sl{ ignore-modifiers; }; // keep one-shot-mods when chained into a one-shot-layer
+&sk{ quick-release; }; // must have (lots of false positives otherwise)
+
+// add our common tap-hold parametesr to the default options
+&mt{
+  tapping-term-ms = <SHORT_TAPPING_TERM>;
+  quick-tap-ms = <QUICK_TAP>;
+};
+
+&lt{
+  tapping-term-ms = <TAPPING_TERM>;
+  quick-tap-ms = <QUICK_TAP>;
+};
+
 / {
   behaviors {
+    hrm: homerow_mods {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&kp>;
+    };
+    sc: space_cadet { // same as lt, but with hold-preferred
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <SHORT_TAPPING_TERM>;
+      quick-tap-ms = <QUICK_TAP>;
+      flavor = "hold-preferred";
+      bindings = <&mo>, <&kp>;
+    };
+
+    // like ZMK's sticky layer (sl) but with a more robust timing
+    osl: one_shot_layer {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings = <&macro_param_1to1>, <&macro_tap &sl MACRO_PLACEHOLDER>;
+    };
+    bsl: better_sticky_layer {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&mo>, <&osl>;
+    };
+
+    // like ZMK's sticky key (sk) but with a more robust timing
+    osm: one_shot_modifier {
+      compatible = "zmk,behavior-macro-one-param";
+      #binding-cells = <1>;
+      tap-ms = <0>;
+      wait-ms = <0>;
+      bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
+    };
+    bsk: better_sticky_key {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>;
+      flavor = "tap-preferred";
+      bindings = <&kp>, <&osm>;
+    };
+
+    //  Mod-morphs to restore Shift + Space and Ctrl + backspace for certain keympas
     magic_backspace: magic_backspace {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sc NUM_NAV_LAYER BACKSPACE>, <&lt NUM_NAV_LAYER SPACE>;
+      bindings = <&sc NAV_LAYER BACKSPACE>, <&lt NAV_LAYER SPACE>;
       mods = <MOD_LSFT>;
       keep-mods = <MOD_LSFT>;
     };
-
-    magic_backspace_vim: magic_backspace_vim {
+    magic_space: magic_space {
       compatible = "zmk,behavior-mod-morph";
       #binding-cells = <0>;
-      bindings = <&sc VIM_NAV_LAYER BACKSPACE>, <&lt VIM_NAV_LAYER SPACE>;
+      bindings = <&lt NAV_LAYER SPACE>, <&sc NAV_LAYER BACKSPACE>;
+      mods = <MOD_LCTL>;
+      keep-mods = <MOD_LCTL>;
+    };
+    magic_backspace_34_keys: magic_backspace_34_keys {
+      compatible = "zmk,behavior-mod-morph";
+      #binding-cells = <0>;
+      bindings = <&sc HRM_LAYER BACKSPACE>, <&lt HRM_LAYER SPACE>;
       mods = <MOD_LSFT>;
       keep-mods = <MOD_LSFT>;
     };
