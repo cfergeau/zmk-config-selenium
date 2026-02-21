@@ -1,0 +1,9 @@
+#define SLN_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
+    SLN_LAYER(name,                                          \
+                    LT    RT                                 \
+                    LM    RM                                 \
+        &kp LSHIFT  LB    RB     &kp RSHIFT                  \
+    )
+
+#include "selenium.keymap"
+
