@@ -1,0 +1,104 @@
+/* 
+* 
+* Valeurs par défaut :
+* configuration 3-3-3-3-3-3 (6x3) + 3 à chaque pouce
+* 
+*/
+
+#ifndef NB_EXT_PINKY
+    #define NB_EXT_PINKY 3
+#endif
+
+#ifndef NB_STD_PINKY
+    #define NB_STD_PINKY 3
+#endif
+
+#ifndef NB_EXT_INDEX
+    #define NB_EXT_INDEX 3
+#endif
+
+#ifndef NB_LEFT_THUMBS
+    #define NB_LEFT_THUMBS 3
+#endif
+
+#ifndef NB_RIGHT_THUMBS
+    #define NB_RIGHT_THUMBS 3
+#endif
+
+
+/* 
+* 
+* Attribuer les alias pour chaque possibilité 
+* (ext pinky de 0 à 3, std pinky, ext index et pouces 2 ou 3)
+* 
+*/
+
+#if NB_EXT_PINKY < 3
+    #define PL_LT5
+    #define PL_RT5
+#else
+    #define PL_LT5 X_LT5
+    #define PL_RT5 X_RT5
+#endif
+
+#if NB_EXT_PINKY < 2
+    #define PL_LM5
+    #define PL_RM5
+#else
+    #define PL_LM5 X_LM5
+    #define PL_RM5 X_RM5
+#endif
+
+#if NB_EXT_PINKY == 0
+    #define PL_LB5
+    #define PL_RB5
+#else
+    #define PL_LB5 X_LB5
+    #define PL_RB5 X_RB5
+#endif
+
+#if NB_STD_PINKY < 3
+    #define PL_LT4
+    #define PL_RT4
+#else
+    #define PL_LT4 X_LT4
+    #define PL_RT4 X_RT4
+#endif
+
+#if NB_EXT_INDEX < 3
+    #define PL_LT0
+    #define PL_RT0
+#else
+    #define PL_LT0 X_LT0
+    #define PL_RT0 X_RT0
+#endif
+
+#if NB_LEFT_THUMBS < 3
+    #define PL_LH2 
+#else
+    #define PL_LH2 X_LH2
+#endif
+
+#if NB_RIGHT_THUMBS < 3
+    #define PL_RH2 
+#else
+    #define PL_RH2 X_RH2
+#endif
+
+
+/* 
+* 
+* Appel à la fonction de base en remplaçant les alias
+* 
+*/
+
+#define SLN_BASE_LAYER(name,                                                            \
+    X_LT5, X_LT4, X_LT3, X_LT2, X_LT1, X_LT0, X_RT0, X_RT1, X_RT2, X_RT3, X_RT4, X_RT5, \
+    X_LM5, X_LM4, X_LM3, X_LM2, X_LM1, X_LM0, X_RM0, X_RM1, X_RM2, X_RM3, X_RM4, X_RM5, \
+    X_LB5, X_LB4, X_LB3, X_LB2, X_LB1, X_LB0, X_RB0, X_RB1, X_RB2, X_RB3, X_RB4, X_RB5, \
+                         X_LH2, X_LH1, X_LH0, X_RH0, X_RH1, X_RH2)                      \
+        SLN_LAYER(name,                                                                 \
+   <PL_LT5 PL_LT4 X_LT3 X_LT2 X_LT1 PL_LT0 PL_RT0 X_RT1 X_RT2 X_RT3 PL_RT4 PL_RT5       \
+    PL_LM5  X_LM4 X_LM3 X_LM2 X_LM1  X_LM0  X_RM0 X_RM1 X_RM2 X_RM3  X_RM4 PL_RM5       \
+    PL_LB5  X_LB4 X_LB3 X_LB2 X_LB1  X_LB0  X_RB0 X_RB1 X_RB2 X_RB3  X_RB4 PL_RB5       \
+                       PL_LH2 X_LH1  X_LH0  X_RH0 X_RH1 PL_RH2>)
