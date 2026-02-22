@@ -32,14 +32,12 @@ include:
     artifact-name: totem_default_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble
     shield: totem_right
     artifact-name: totem_default_right
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DCONFIG_ZMK_STUDIO=y
 
 
@@ -49,7 +47,6 @@ include:
     artifact-name: totem_ergol_vim_shift_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHRM_SHIFT"
       -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble
@@ -57,7 +54,6 @@ include:
     artifact-name: totem_ergol_vim_shift_right
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHRM_SHIFT"
       -DCONFIG_ZMK_STUDIO=y
 
@@ -67,7 +63,6 @@ include:
     artifact-name: totem_ergol_2tk_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHT_TWO_THUMB_KEYS"
       -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble
@@ -75,7 +70,6 @@ include:
     artifact-name: totem_ergol_2tk_right
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHT_TWO_THUMB_KEYS"
       -DCONFIG_ZMK_STUDIO=y
 
@@ -85,7 +79,6 @@ include:
     artifact-name: totem_azerty_tt_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
       -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble
@@ -93,7 +86,6 @@ include:
     artifact-name: totem_azerty_tt_right
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
       -DCONFIG_ZMK_STUDIO=y
 
@@ -103,7 +95,6 @@ include:
     artifact-name: totem_ergol_hummingbird_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
       -DCONFIG_ZMK_STUDIO=y
   - board: xiao_ble
@@ -111,6 +102,5 @@ include:
     artifact-name: totem_ergol_hummingbird_right
     snippet: studio-rpc-usb-uart
     cmake-args: >
-      -DKEYMAP_FILE=/__w/zmk-config-selenium/zmk-config-selenium/keymaps/totem.keymap
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
       -DCONFIG_ZMK_STUDIO=y
