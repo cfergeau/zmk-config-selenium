@@ -32,5 +32,4 @@
     )
 
 
-#include "selenium.keymap"
-
+#include "../keymaps/selenium.keymap"
