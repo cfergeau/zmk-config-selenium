@@ -1,9 +1,18 @@
-#define SLN_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
-    SLN_LAYER(name,                                          \
-                    LT    RT                                 \
-                    LM    RM                                 \
-        &kp LSHIFT  LB    RB     &kp RSHIFT                  \
-    )
+/*
+ * 
+ * Configuration 1-3-3-3-3-3 + 3 touches de pouce de chaque côté 
+ * Seul NB_EXT_PINKY a besoin d'être définir car les autres variables
+ * ont les valeurs par défaut. Tout est défini tout de même pour servir
+ * de modèle générique.
+ * 
+ */
+
+#define NB_EXT_PINKY 1
+#define NB_STD_PINKY 3
+#define NB_EXT_INDEX 3
+
+#define NB_LEFT_THUMBS 3
+#define NB_RIGHT_THUMBS 3
 
 #include "selenium.keymap"
 
