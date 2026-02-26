@@ -1,0 +1,35 @@
+
+#define SLN_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
+    SLN_LAYER(name,                                          \
+        &kp TAB     LT    RT     &kp BACKSPACE               \
+        &kp ESCAPE  LM    RM     &kp ENTER                   \
+        &kp LSHIFT  LB    RB     &kp RSHIFT                  \
+                 LH          RH                              \
+    )
+
+#define SLN_ERGOL_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
+    SLN_LAYER(name,                                                \
+        &kp Z  LT      RT  &kp FSLH                                \
+        &kp Z  LM      RM  &kp FSLH                                \
+        &none  LB      RB   &none                                  \
+             LH          RH                                        \
+    )
+
+#define SLN_AZERTY_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
+    SLN_LAYER(name,                                          \
+        &kp TAB     LT    RT     &kp BACKSPACE               \
+        &kp ESCAPE  LM    RM     &EZ_SL(DK_LAYER)            \
+        &kp LSHIFT  LB    RB     &kp RSHIFT                  \
+                 LH          RH                              \
+    )
+
+#define SLN_AZERTY_DEADKEY_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
+    SLN_LAYER(name,                                          \
+        &trans  LT    RT     &trans                          \
+        &trans  LM    RM     &trans                          \
+        &trans  LB    RB     &kp LS(LBKT)                    \
+             LH          RH                                  \
+    )
+
+
+#include "../include/selenium/selenium.keymap"

@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: cfergeau
       url-base: https://github.com/cfergeau
+    - name: NuclearSquid
+      url-base: https://github.com/Nuclear-Squid
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,8 @@ manifest:
     - name: zmk-config-totem
       remote: cfergeau
       revision: zmk-module
+    - name: zmk-keyboard-quacken
+      remote: NuclearSquid
+      revision: main
   self:
     path: config

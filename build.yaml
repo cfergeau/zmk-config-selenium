@@ -26,6 +26,66 @@
 #   - `shift` (HRM_SHIFT): add shift as a pinky homerow-mod
 
 include:
+    # **** Quacken ****
+    #
+    # dummy firmware, just making sure we can build for the RP2040
+  - board: sparkfun_pro_micro_rp2040
+    shield: tester_pro_micro
+    artifact-name: quacken_test
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DCONFIG_ZMK_STUDIO=y
+
+    # Quacken Zero + SparkFun RP2040, default config
+  - board: sparkfun_pro_micro_rp2040
+    shield: quacken_zero
+    artifact-name: quacken_zero
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DCONFIG_ZMK_STUDIO=y
+
+    # Quacken Flex, default config
+  - board: quacken_flex
+    artifact-name: quacken_flex
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DCONFIG_ZMK_STUDIO=y
+
+    # Quacken Flex, Ergol + Vim + hrm_shift config
+  - board: quacken_flex
+    artifact-name: quacken_flex_ergol_vim_shift
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHRM_SHIFT"
+      -DCONFIG_ZMK_STUDIO=y
+
+    # Quacken Flex, Ergol + Vim + 2tk config
+  - board: quacken_flex
+    artifact-name: quacken_flex_ergol_2tk
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHT_TWO_THUMB_KEYS"
+      -DCONFIG_ZMK_STUDIO=y
+
+    # Quacken Flex, Azerty + thumb-taps config
+  - board: quacken_flex
+    artifact-name: quacken_flex_azerty_tt
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
+      -DCONFIG_ZMK_STUDIO=y
+
+    # Quacken Flex, Ergol + Hummingbird config
+  - board: quacken_flex
+    artifact-name: quacken_flex_ergol_hummingbird
+    snippet: studio-rpc-usb-uart
+    cmake-args: >
+      -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
+      -DCONFIG_ZMK_STUDIO=y
+
+
+    # **** Totem ****
+    #
     # Default config
   - board: xiao_ble
     shield: totem_left
@@ -89,7 +149,7 @@ include:
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
       -DCONFIG_ZMK_STUDIO=y
 
-    # Quacken Flex, Ergo-L + Hummingbird config
+    # Ergo-L + Hummingbird config
   - board: xiao_ble
     shield: totem_left
     artifact-name: totem_ergol_hummingbird_left
