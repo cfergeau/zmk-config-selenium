@@ -1,8 +1,11 @@
-#define SLN_BASE_LAYER(name, LT, RT, LM, RM, LB, RB, LH, RH) \
-    SLN_LAYER(name,                                          \
-                    LT    RT                                 \
-                    LM    RM                                 \
-        &kp LSHIFT  LB    RB     &kp RSHIFT                  \
+#include "../keymaps/aliases.h" // defines symbols and actions
+
+#define SLN_BASE_LAYER(name, LROW1, RROW1, LROW2, RROW2, LROW3, RROW3, LT1, LT2, LT3, RT3, RT2, RT1) \
+    SLN_LAYER(name,                                \
+                    LROW1      RROW1               \
+                    LROW2      RROW2               \
+        &kp LSHIFT  LROW3      RROW3   &kp RSHIFT  \
+            LT1  LT2  LT3      RT3  RT2  RT1       \
     )
 
 #include "../keymaps/selenium.keymap"
