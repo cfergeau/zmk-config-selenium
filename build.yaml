@@ -29,7 +29,7 @@ include:
     # **** Quacken ****
     #
     # dummy firmware, just making sure we can build for the RP2040
-  - board: sparkfun_pro_micro_rp2040
+  - board: sparkfun_pro_micro_rp2040//zmk
     shield: tester_pro_micro
     artifact-name: quacken_test
     snippet: studio-rpc-usb-uart
@@ -37,7 +37,7 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Quacken Zero + SparkFun RP2040, default config
-  - board: sparkfun_pro_micro_rp2040
+  - board: sparkfun_pro_micro_rp2040//zmk
     shield: quacken_zero
     artifact-name: quacken_zero
     snippet: studio-rpc-usb-uart
@@ -45,14 +45,14 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Quacken Flex, default config
-  - board: quacken_flex
+  - board: quacken_flex/rp2040
     artifact-name: quacken_flex
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
 
     # Quacken Flex, Ergol + Vim + hrm_shift config
-  - board: quacken_flex
+  - board: quacken_flex/rp2040
     artifact-name: quacken_flex_ergol_vim_shift
     snippet: studio-rpc-usb-uart
     cmake-args: >
@@ -60,7 +60,7 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Quacken Flex, Ergol + Vim + 2tk config
-  - board: quacken_flex
+  - board: quacken_flex/rp2040
     artifact-name: quacken_flex_ergol_2tk
     snippet: studio-rpc-usb-uart
     cmake-args: >
@@ -68,7 +68,7 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Quacken Flex, Azerty + thumb-taps config
-  - board: quacken_flex
+  - board: quacken_flex/rp2040
     artifact-name: quacken_flex_azerty_tt
     snippet: studio-rpc-usb-uart
     cmake-args: >
@@ -76,7 +76,7 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Quacken Flex, Ergol + Hummingbird config
-  - board: quacken_flex
+  - board: quacken_flex/rp2040
     artifact-name: quacken_flex_ergol_hummingbird
     snippet: studio-rpc-usb-uart
     cmake-args: >
@@ -87,13 +87,13 @@ include:
     # **** Totem ****
     #
     # Default config
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_left
     artifact-name: totem_default_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_right
     artifact-name: totem_default_right
     snippet: studio-rpc-usb-uart
@@ -102,14 +102,14 @@ include:
 
 
     # Ergo-L + Vim + hrm_shift config
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_left
     artifact-name: totem_ergol_vim_shift_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHRM_SHIFT"
       -DCONFIG_ZMK_STUDIO=y
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_right
     artifact-name: totem_ergol_vim_shift_right
     snippet: studio-rpc-usb-uart
@@ -118,14 +118,14 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Ergo-L + Vim + 2tk config
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_left
     artifact-name: totem_ergol_2tk_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHT_TWO_THUMB_KEYS"
       -DCONFIG_ZMK_STUDIO=y
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_right
     artifact-name: totem_ergol_2tk_right
     snippet: studio-rpc-usb-uart
@@ -134,14 +134,14 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Azerty + thumb-taps config
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_left
     artifact-name: totem_azerty_tt_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
       -DCONFIG_ZMK_STUDIO=y
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_right
     artifact-name: totem_azerty_tt_right
     snippet: studio-rpc-usb-uart
@@ -150,14 +150,14 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Ergo-L + Hummingbird config
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_left
     artifact-name: totem_ergol_hummingbird_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
       -DCONFIG_ZMK_STUDIO=y
-  - board: xiao_ble
+  - board: xiao_ble//zmk
     shield: totem_right
     artifact-name: totem_ergol_hummingbird_right
     snippet: studio-rpc-usb-uart
@@ -169,13 +169,13 @@ include:
     # **** Corne ****
     #
     # Default config
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_left
     artifact-name: corne_default_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_right
     artifact-name: corne_default_right
     snippet: studio-rpc-usb-uart
@@ -184,14 +184,14 @@ include:
 
 
     # Ergo-L + Vim + hrm_shift config
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_left
     artifact-name: corne_ergol_vim_shift_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHRM_SHIFT"
       -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_right
     artifact-name: corne_ergol_vim_shift_right
     snippet: studio-rpc-usb-uart
@@ -200,14 +200,14 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Ergo-L + Vim + 2tk config
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_left
     artifact-name: corne_ergol_2tk_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DVIM_NAVIGATION;-DHT_TWO_THUMB_KEYS"
       -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_right
     artifact-name: corne_ergol_2tk_right
     snippet: studio-rpc-usb-uart
@@ -216,14 +216,14 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Azerty + thumb-taps config
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_left
     artifact-name: corne_azerty_tt_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_AZERTY;-DHT_THUMB_TAPS"
       -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_right
     artifact-name: corne_azerty_tt_right
     snippet: studio-rpc-usb-uart
@@ -232,14 +232,14 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
     # Ergo-L + Hummingbird config
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_left
     artifact-name: corne_ergol_hummingbird_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_ERGOL;-DHUMMINGBIRD"
       -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano
+  - board: nice_nano@2//zmk
     shield: corne_right
     artifact-name: corne_ergol_hummingbird_right
     snippet: studio-rpc-usb-uart
