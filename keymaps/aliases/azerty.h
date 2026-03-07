@@ -62,3 +62,9 @@
 #define S_DOT   &kp LS(COMMA)
 #define S_MONEY &kp RA(E)
 
+/**
+ * AZERTY-specific keys and layers
+ */
+
+#define DK_LAYER EXTRA_LAYERS_START_INDEX
+#define SLN_ROUT2 &kp &EZ_SL(DK_LAYER)

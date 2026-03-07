@@ -150,12 +150,11 @@
 &sl { ignore-modifiers; }; // keep one-shot-mods when chained into a one-shot-layer
 &sk { quick-release; };    // must-have! (lots of false positives otherwise)
 
-// add our common tap-hold parametesr to the default options
+// add our common tap-hold parametesrs to the default options
 &mt {
   tapping-term-ms = <SHORT_TAPPING_TERM>;
   quick-tap-ms = <QUICK_TAP>;
 };
-
 &lt{
   tapping-term-ms = <TAPPING_TERM>;
   quick-tap-ms = <QUICK_TAP>;
