@@ -1,0 +1,20 @@
+#ifndef LROW1_KEYS
+#define LROW1_KEYS LEFT_FIVE_KEYS
+#endif
+#ifndef RROW1_KEYS
+#define RROW1_KEYS RIGHT_FIVE_KEYS
+#endif
+#ifndef LROW2_KEYS
+#define LROW2_KEYS LEFT_FIVE_KEYS
+#endif
+#ifndef RROW2_KEYS
+#define RROW2_KEYS RIGHT_FIVE_KEYS
+#endif
+#ifndef LROW3_KEYS
+#define LROW3_KEYS SIX_KEYS
+#endif
+#ifndef RROW3_KEYS
+#define RROW3_KEYS SIX_KEYS
+#endif
+
+#include "../include/selenium/selenium.keymap"
