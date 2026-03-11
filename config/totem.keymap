@@ -1,4 +1,3 @@
-#ifndef SLN_LAYER
 #define SLN_LAYER(name, LOUT1,  LROW1,  RROW1,  ROUT1, \
                         LOUT2,  LROW2,  RROW2,  ROUT2, \
                         LOUT3,  LROW3,  RROW3,  ROUT3, \
@@ -7,6 +6,5 @@
                           LROW2   RROW2       \
                     LOUT3 LROW3   RROW3 ROUT3 \
                     LT1 LT2 LT3   RT3 RT2 RT1)
-#endif
 
 #include "../include/selenium/selenium.keymap"
