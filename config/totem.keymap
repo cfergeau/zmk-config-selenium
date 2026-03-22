@@ -7,4 +7,8 @@
     LOUT3 LROW3   RROW3 ROUT3 \
     LT1 LT2 LT3   RT3 RT2 RT1
 
+#define KB_LAYOUT_ERGOL
+#define VIM_NAVIGATION
+#define HRM_SHIFT
+
 #include "../include/selenium/selenium.keymap"
