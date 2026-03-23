@@ -9,8 +9,6 @@
 
 #define KB_LAYOUT_ERGOL
 #define VIM_NAVIGATION
-//#define HRM_SHIFT
-#define HT_THUMB_TAPS
-
+#define HRM_SHIFT
 
 #include "../include/selenium/selenium.keymap"
