@@ -4,4 +4,5 @@ jobs:
   build:
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
-      archive_name: firmware-selenium
+      archive_name: firmware-tester-selenium
+      build_matrix_path: ci.yaml
