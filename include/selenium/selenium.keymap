@@ -74,6 +74,15 @@
 
 // #define LEFT_HAND_SPACE
 
+// If you want to change an option for one or several of your keyboards, but
+// not for all, define the corresponding alias, adding the prefix SPECIFIC_ to
+// its name, in the keyboard specific file. For example, say you want the
+// option KB_LAYOUT_QWERTY_LAFAYETTE for your ferris, you would add a line like
+// that (but uncommented) in the ferris.keyboard file (DO NOT USE IT HERE!):
+// #define SPECIFIC_KB_LAYOUT_QWERTY_LAFAYETTE
+
+// Do not edit the next line
+#include "add_kb_specific_options.h"      // override with kb specific options
 
 /******************************************************************************
  * Keymap

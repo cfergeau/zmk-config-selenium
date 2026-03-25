@@ -11,6 +11,8 @@
 
 // This keyboard has only two keys per thumb.
 // Ensure the 2TK flavor is selected.
-#define HT_TWO_THUMB_KEYS
+#ifndef SPECIFIC_HT_TWO_THUMB_KEYS
+  #define SPECIFIC_HT_TWO_THUMB_KEYS
+#endif
 
 #include "../include/selenium/selenium.keymap"
