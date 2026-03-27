@@ -26,6 +26,43 @@
  * Home Rew
  */
 
+#if defined CI_VIM_NAVIGATION || defined CI_HRM_SHIFT || defined CI_KB_LAYOUT_AZERTY || defined CI_HT_THUMB_TAPS || defined CI_KB_LAYOUT_ERGOL || defined CI_HUMMINGBIRD
+#undef VIM_NAVIGATION
+#undef HRM_SHIFT
+#undef KB_LAYOUT_AZERTY
+#undef KB_LAYOUT_ERGOL
+#undef KB_LAYOUT_QWERTY_LAFAYETTE
+#undef HT_NONE
+#undef HT_THUMB_TAPS
+#undef HT_HOME_ROW_MODS
+#undef HT_TWO_THUMB_KEYS
+#undef HUMMINGBIRD
+#endif
+
+#if defined CI_VIM_NAVIGATION
+#define VIM_NAVIGATION
+#endif
+
+#if defined CI_HRM_SHIFT
+#define HRM_SHIFT
+#endif
+
+#if defined CI_KB_LAYOUT_AZERTY
+#define KB_LAYOUT_AZERTY
+#endif
+
+#if defined CI_HT_THUMB_TAPS
+#define HT_THUMB_TAPS
+#endif
+
+#if defined CI_KB_LAYOUT_ERGOL
+#define KB_LAYOUT_ERGOL
+#endif
+
+#if defined CI_HUMMINGBIRD
+#define HUMMINGBIRD
+#endif
+
 #if !defined HT_NONE && !defined HT_THUMB_TAPS && !defined HT_HOME_ROW_MODS && !defined HT_TWO_THUMB_KEYS
 #define HT_HOME_ROW_MODS
 #elif defined HT_NONE + defined HT_THUMB_TAPS + defined HT_HOME_ROW_MODS + defined HT_TWO_THUMB_KEYS > 1
