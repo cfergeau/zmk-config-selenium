@@ -56,6 +56,18 @@ include:
     artifact-name: bepolar
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_BEPOLAR"
 
+    # Dvorak
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: corne_left
+    artifact-name: dvorak
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGLACE"
+
+    # Erglace
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: corne_left
+    artifact-name: erglace
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_ERGLACE"
+
     # QWERTY-br (Brazil)
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_left
@@ -133,6 +145,12 @@ include:
     shield: corne_left
     artifact-name: qwerty_se
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_SE"
+
+    # QWERTY Lafayette
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: corne_left
+    artifact-name: qwerty_lafayette
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY_LAFAYETTE"
 
     # QWERTZ-ch (Switzerland)
   - board: sparkfun_pro_micro_rp2040//zmk
