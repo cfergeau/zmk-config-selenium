@@ -113,6 +113,12 @@ include:
     artifact-name: __tester_rp2040_qwerty_vim_shift
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DVIM_NAVIGATION;-DHRM_SHIFT"
 
+  # Pro Micro RP2040, Qwerty Lafayette + Left Hand Space
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: tester_pro_micro
+    artifact-name: __tester_rp2040_qwerty_lafayette_lhs
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_QWERTY_LAFAYETTE;-DLEFT_HAND_SPACE"
+
   # Pro Micro RP2040, Azerty + thumb-taps
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: tester_pro_micro
@@ -130,6 +136,12 @@ include:
     shield: tester_pro_micro
     artifact-name: __tester_rp2040_bepolar_2tk
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_BEPOLAR;-DHT_TWO_THUMB_KEYS"
+
+  # Pro Micro RP2040, Dvorak
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: tester_pro_micro
+    artifact-name: __tester_rp2040_dvorak
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DKB_LAYOUT_DVORAK"
 
   # Pro Micro RP2040, Erglace
   - board: sparkfun_pro_micro_rp2040//zmk
