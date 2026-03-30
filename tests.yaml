@@ -50,6 +50,12 @@ include:
     artifact-name: bepo
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_BEPO"
 
+    # Bepolar (France)
+  - board: sparkfun_pro_micro_rp2040//zmk
+    shield: corne_left
+    artifact-name: bepolar
+    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_BEPOLAR"
+
     # QWERTY-br (Brazil)
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_left
