@@ -1,0 +1,77 @@
+on:
+  workflow_dispatch:
+    inputs:
+      keyboard:
+        description: 'Keyboard Model'
+        required: true
+        default: ''
+        type: choice
+        options:
+        - Corne
+        - Ferris
+        - Glove80
+        - Quacken Flex
+        - Quacken Zero
+        - Sweep
+        - Totem
+      holdTaps:
+        description: 'Hold-Taps Mode'
+        required: true
+        default: 'HRM - Homerow-mods'
+        type: choice
+        options:
+        - EZ - No Hold-taps
+        - TT - Thumb-taps
+        - HRM - Homerow-mods
+        - 2TK - Two thumb keys
+      keyboardLayout:
+        description: 'Keyboard Layout'
+        required: true
+        default: 'Qwerty'
+        type: choice
+        options:
+        - Azerty
+        - Bépo
+        - Bépolar
+        - Dvorak
+        - Ergo-L
+        - Erglace
+        - Qwerty
+        - Qwerty-Lafayette
+      macPc:
+        description: 'Keyboard Type'
+        required: true
+        default: 'PC'
+        type: choice
+        options:
+        - mac
+        - PC
+      vimNav:
+        description: 'Vim Navigation'
+        required: false
+        type: boolean
+      hrmShift:
+        description: 'Shift as a pinky HRM'
+        required: false
+        type: boolean
+
+jobs:
+  log-the-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "Keyboard: $KBD"
+          echo "Hold Taps: $HOLD_TAPS"
+          echo "Keyboard Layout: $KB_LAYOUT"
+          echo "Keyboard Type: $MAC_PC"
+          echo "Vim Navigation: $VIM_NAV"
+          echo "HRM Shift: $HRM_SHIFT"
+          command -v yq
+          command -v jq
+        env:
+          KBD: ${{ inputs.Keyboard }}
+          HOLD_TAPS: ${{ inputs.holdTaps }}
+          KB_LAYOUT: ${{ inputs.keyboardLayout }}
+          MAC_PC: ${{ inputs.macPc }}
+          VIM_NAV: ${{ inputs.vimNav }}
+          HRM_SHIFT: ${{ inputs.hrmShift }}
