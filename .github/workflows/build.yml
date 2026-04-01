@@ -3,6 +3,7 @@ on: [push, pull_request]
 jobs:
   ci:
     name: "ci: Build test firmwares with various configuration options"
+    if: github.repository_owner == 'OneDeadKey' || github.repository_owner == 'cfergeau'
     uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
     with:
       archive_name: firmware-tester-selenium
