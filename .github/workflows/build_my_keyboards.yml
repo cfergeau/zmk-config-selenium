@@ -1,0 +1,11 @@
+on: [push, pull_request, workflow_dispatch]
+
+jobs:
+  build_my_keyboards:
+    # only trigger this job if the user created a `my_keyboards.yaml` file
+    if: ${{ hashFiles('my_keyboards.yaml') != '' }}
+    name: Build user-defined keyboard firmwares
+    uses: ./.github/workflows/zmk-build-user-config.yml
+    with:
+      archive_name: firmware-my-keyboards
+      build_matrix_path: my-keyboards.yaml
