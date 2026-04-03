@@ -109,44 +109,46 @@ jobs:
             ;;
           esac
 
+          COMPILE_FLAGS="-DIGNORE_USER_SETTINGS"
+
           case $KB_LAYOUT in
             Azerty)
-              COMPILE_FLAGS="-DKB_LAYOUT_AZERTY"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_AZERTY"
             ;;
             Bépo)
-              COMPILE_FLAGS="-DKB_LAYOUT_BEPO"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_BEPO"
             ;;
             Bépolar)
-              COMPILE_FLAGS="-DKB_LAYOUT_BEPOLAR"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_BEPOLAR"
             ;;
             Dvorak)
-              COMPILE_FLAGS="-DKB_LAYOUT_DVORAK"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_DVORAK"
             ;;
             Ergo-L)
-              COMPILE_FLAGS="-DKB_LAYOUT_ERGOL"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_ERGOL"
             ;;
             Erglace)
-              COMPILE_FLAGS="-DKB_LAYOUT_ERGLACE"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_ERGLACE"
             ;;
             Qwerty)
-              COMPILE_FLAGS="-DKB_LAYOUT_QWERTY"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_QWERTY"
             ;;
             Qwerty-Lafayette)
-              COMPILE_FLAGS="-DKB_LAYOUT_QWERTY_LAFAYETTE"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DKB_LAYOUT_QWERTY_LAFAYETTE"
             ;;
           esac
 
           case $HOLD_TAPS in
             EZ*)
-              COMPILE_FLAGS="-DHT_NONE"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DHT_NONE"
             ;;
             TT*)
-              COMPILE_FLAGS="-DHT_THUMB_TAPS"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DHT_THUMB_TAPS"
             ;;
             HRM*) # default, nothing to do
             ;;
             2TK*)
-              COMPILE_FLAGS="-DHT_TWO_THUMB_KEYS"
+              COMPILE_FLAGS="$COMPILE_FLAGS;-DHT_TWO_THUMB_KEYS"
             ;;
           esac
 
