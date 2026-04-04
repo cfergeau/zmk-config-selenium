@@ -62,7 +62,7 @@ For our lily58, this will be similar to this:
 #include "../include/selenium/selenium.keymap"
 ```
 
-You can find some examples in [`zmk-config-selenium/config`](https://github.com/OneDeadKey/zmk-config-selenium/tree/main/config).
+You can find some examples in [`zmk-config-selenium/config`](config/).
 
 At the end of your keymap, this line is mandatory
 ```
@@ -70,7 +70,7 @@ At the end of your keymap, this line is mandatory
 ```
 
 You can adjust various options in
-[`include/selenium/selenium.keymap`](https://github.com/OneDeadKey/zmk-config-selenium/blob/main/include/selenium/selenium.keymap),
+[`include/selenium/selenium.keymap`](include/selenium/selenium.keymap),
 or even make some changes to the content of the keymap itself (its keys and layers).
 
 
@@ -133,7 +133,7 @@ Replace its whole content with something like:
 ```
 
 `SELENIUM_KEYMAP_BINDINGS` must be defined to adjust Selenium to your keyboard geometry.
-You can find some examples in [`zmk-config-selenium/config`](https://github.com/OneDeadKey/zmk-config-selenium/tree/main/config).
+You can find some examples in [`zmk-config-selenium/config`](config/).
 
 At the end of your keymap, you must have this line:
 ```
@@ -143,7 +143,7 @@ At the end of your keymap, you must have this line:
 The `#define` at the beginning are optional and allow to set some
 `zmk-config-selenium` options. These are described at the [beginning of the
 Selenium keymap]
-(https://github.com/OneDeadKey/zmk-config-selenium/blob/main/include/selenium/selenium.keymap).
+(include/selenium/selenium.keymap).
 
 3. Build your keymap
 
