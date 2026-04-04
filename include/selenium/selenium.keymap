@@ -5,7 +5,7 @@
 #if !defined HT_NONE && !defined HT_THUMB_TAPS && !defined HT_HOME_ROW_MODS && !defined HT_TWO_THUMB_KEYS
 /******************************************************************************
  * Layout-specific actions and symbols.
-******************************************************************************/
+ ******************************************************************************/
 
 // Uncomment one of the folowing lines if using a non-QWERTY layout:
 
@@ -20,7 +20,7 @@
 
 /******************************************************************************
  * Hold-Taps
-******************************************************************************/
+ ******************************************************************************/
 
 // Uncomment one of the folowing lines to pick your preferred hold-tap config:
 
@@ -53,9 +53,9 @@
 // For more information on how hold-taps operate, feel free to read ZMK’s docs:
 // https://zmk.dev/docs/keymaps/behaviors/hold-tap
 
-/******************************************************************************
+/*****************************************************************************
  * Other Options
-*****************************************************************************/
+ *****************************************************************************/
 
 // Uncomment the following line to plit the num-nav layer in two:
 //  - one layer for vim-style navigation (right) and GUI shortcuts (left)
@@ -78,9 +78,9 @@
 #endif
 
 
-/******************************************************************************
+/*****************************************************************************
  * Keymap
-*****************************************************************************/
+ *****************************************************************************/
 
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro
