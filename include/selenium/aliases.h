@@ -1,5 +1,13 @@
 #include <dt-bindings/zmk/keys.h>
 
+#if defined KB_LAYOUT_AZERTY + defined KB_LAYOUT_BEPO + defined KB_LAYOUT_BEPOLAR + defined KB_LAYOUT_DVORAK + defined KB_LAYOUT_ERGOL + defined KB_LAYOUT_ERGLACE + defined KB_LAYOUT_QWERTY_INTL + defined KB_LAYOUT_QWERTY_LAFAYETTE > 1
+  #error "Please select only up to one layout configuration at a time"
+#endif
+
+#if defined KB_EMULATION_DVORAK + defined KB_EMULATION_ERGOL > 1
+  #error "Please select only up to one layout emulation at a time"
+#endif
+
 // PC / Mac
 
 #ifdef MACOS
