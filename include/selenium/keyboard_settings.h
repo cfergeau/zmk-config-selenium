@@ -104,7 +104,7 @@
 #endif
 
 // Set global settings
-#ifndef IGNORE_USER_SETTINGS
+#ifndef IGNORE_GLOBAL_SETTINGS
   #include "settings.h"   // user settings
 #endif
 
