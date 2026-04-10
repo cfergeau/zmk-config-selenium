@@ -120,7 +120,7 @@ jobs:
             ;;
           esac
 
-          COMPILE_FLAGS="-DIGNORE_USER_SETTINGS"
+          COMPILE_FLAGS="-DIGNORE_GLOBAL_SETTINGS"
 
           case $KB_LAYOUT in
             Azerty)
