@@ -1,9 +1,7 @@
 // Selenium keymap:
 // https://github.com/OneDeadKey/selenium
 
-#ifndef IGNORE_USER_SETTINGS
-  #include "settings.h"   // user settings
-#endif
+#include "keyboard_settings.h"   // merges per-keyboard settings with global ones, per-keyboard takes precedence
 
 #include "aliases.h"      // defines symbols and actions
 #include "bindings.h"     // default SELENIUM_KEYMAP_BINDINGS macro

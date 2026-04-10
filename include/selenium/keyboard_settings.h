@@ -1,0 +1,253 @@
+#ifdef KB_LAYOUT_AZERTY
+  #define KBSET_KB_LAYOUT_AZERTY
+  #undef KB_LAYOUT_AZERTY
+#endif
+
+#ifdef KB_LAYOUT_BEPO
+  #define KBSET_KB_LAYOUT_BEPO
+  #undef KB_LAYOUT_BEPO
+#endif
+
+#ifdef KB_LAYOUT_BEPOLAR
+  #define KBSET_KB_LAYOUT_BEPOLAR
+  #undef KB_LAYOUT_BEPOLAR
+#endif
+
+#ifdef KB_LAYOUT_DVORAK
+  #define KBSET_KB_LAYOUT_DVORAK
+  #undef KB_LAYOUT_DVORAK
+#endif
+
+#ifdef KB_LAYOUT_ERGOL
+  #define KBSET_KB_LAYOUT_ERGOL
+  #undef KB_LAYOUT_ERGOL
+#endif
+
+#ifdef KB_LAYOUT_ERGLACE
+  #define KBSET_KB_LAYOUT_ERGLACE
+  #undef KB_LAYOUT_ERGLACE
+#endif
+
+#ifdef KB_LAYOUT_QWERTY_INTL
+  #define KBSET_KB_LAYOUT_QWERTY_INTL
+  #undef KB_LAYOUT_QWERTY_INTL
+#endif
+
+#ifdef KB_LAYOUT_QWERTY_LAFAYETTE
+  #define KBSET_KB_LAYOUT_QWERTY_LAFAYETTE
+  #undef KB_LAYOUT_QWERTY_LAFAYETTE
+#endif
+
+#ifdef KB_EMULATION_DVORAK
+  #define KBSET_KB_EMULATION_DVORAK
+  #undef KB_EMULATION_DVORAK
+#endif
+
+#ifdef KB_EMULATION_ERGOL
+  #define KBSET_KB_EMULATION_ERGOL
+  #undef KB_EMULATION_ERGOL
+#endif
+
+#ifdef MACOS
+  #define KBSET_MACOS
+  #undef MACOS
+#endif
+
+#ifdef HT_NONE
+  #define KBSET_HT_NONE
+  #undef HT_NONE
+#endif
+
+#ifdef HT_THUMB_TAPS
+  #define KBSET_HT_THUMB_TAPS
+  #undef HT_THUMB_TAPS
+#endif
+
+#ifdef HT_HOME_ROW_MODS
+  #define KBSET_HT_HOME_ROW_MODS
+  #undef HT_HOME_ROW_MODS
+#endif
+
+#ifdef HT_TWO_THUMB_KEYS
+  #define KBSET_HT_TWO_THUMB_KEYS
+  #undef HT_TWO_THUMB_KEYS
+#endif
+
+#ifdef TAPPING_TERM
+  #define KBSET_TAPPING_TERM TAPPING_TERM
+  #undef TAPPING_TERM
+#endif
+
+#ifdef SHORT_TAPPING_TERM
+  #define KBSET_SHORT_TAPPING_TERM SHORT_TAPPING_TERM
+  #undef SHORT_TAPPING_TERM
+#endif
+
+#ifdef QUICK_TAP
+  #define KBSET_QUICK_TAP QUICK_TAP
+  #undef QUICK_TAP
+#endif
+
+#ifdef VIM_NAVIGATION
+  #define KBSET_VIM_NAVIGATION
+  #undef VIM_NAVIGATION
+#endif
+
+#ifdef HRM_SHIFT
+  #define KBSET_HRM_SHIFT
+  #undef HRM_SHIFT
+#endif
+
+#ifdef LEFT_HAND_SPACE
+  #define KBSET_LEFT_HAND_SPACE
+  #undef LEFT_HAND_SPACE
+#endif
+
+// Set global settings
+#ifndef IGNORE_USER_SETTINGS
+  #include "settings.h"   // user settings
+#endif
+
+// Restore keyboard specific options, they take precedence over the global settings
+#if defined KBSET_KB_LAYOUT_AZERTY || defined KBSET_KB_LAYOUT_BEPO || defined KBSET_KB_LAYOUT_BEPOLAR || defined KBSET_KB_LAYOUT_DVORAK || defined KBSET_KB_LAYOUT_ERGLACE || defined KBSET_KB_LAYOUT_ERGOL || defined KBSET_KB_LAYOUT_QWERTY_INTL || defined KBSET_KB_LAYOUT_QWERTY_LAFAYETTE
+  #undef KB_LAYOUT_AZERTY
+  #undef KB_LAYOUT_BEPO
+  #undef KB_LAYOUT_BEPOLAR
+  #undef KB_LAYOUT_DVORAK
+  #undef KB_LAYOUT_ERGLACE
+  #undef KB_LAYOUT_ERGOL
+  #undef KBSET_KB_LAYOUT_QWERTY_INTL
+  #undef KBSET_KB_LAYOUT_QWERTY_LAFAYETTE
+#endif
+
+#ifdef KBSET_KB_LAYOUT_AZERTY
+  #undef KB_LAYOUT_AZERTY
+  #define KB_LAYOUT_AZERTY
+  #undef KBSET_KB_LAYOUT_AZERTY
+#endif
+
+#ifdef KBSET_KB_LAYOUT_BEPO
+  #undef KB_LAYOUT_BEPO
+  #define KB_LAYOUT_BEPO
+  #undef KBSET_KB_LAYOUT_BEPO
+#endif
+
+#ifdef KBSET_KB_LAYOUT_BEPOLAR
+  #undef KB_LAYOUT_BEPOLAR
+  #define KB_LAYOUT_BEPOLAR
+  #undef KBSET_KB_LAYOUT_BEPOLAR
+#endif
+
+#ifdef KBSET_KB_LAYOUT_DVORAK
+  #undef KB_LAYOUT_DVORAK
+  #define KB_LAYOUT_DVORAK
+  #undef KBSET_KB_LAYOUT_DVORAK
+#endif
+
+#ifdef KBSET_KB_LAYOUT_ERGOL
+  #undef KB_LAYOUT_ERGOL
+  #define KB_LAYOUT_ERGOL
+  #undef KBSET_KB_LAYOUT_ERGOL
+#endif
+
+#ifdef KBSET_KB_LAYOUT_ERGLACE
+  #undef KB_LAYOUT_ERGLACE
+  #define KB_LAYOUT_ERGLACE
+  #undef KBSET_KB_LAYOUT_ERGLACE
+#endif
+
+#ifdef KBSET_KB_LAYOUT_QWERTY_INTL
+  #undef KB_LAYOUT_QWERTY_INTL
+  #define KB_LAYOUT_QWERTY_INTL
+  #undef KBSET_KB_LAYOUT_QWERTY_INTL
+#endif
+
+#ifdef KBSET_KB_LAYOUT_QWERTY_LAFAYETTE
+  #undef KB_LAYOUT_QWERTY_LAFAYETTE
+  #define KB_LAYOUT_QWERTY_LAFAYETTE
+  #undef KBSET_KB_LAYOUT_QWERTY_LAFAYETTE
+#endif
+
+#if defined KBSET_KB_EMULATION_DVORAK || defined KBSET_KB_EMULATION_ERGOL
+  #undef KBSET_KB_EMULATION_DVORAK
+  #undef KBSET_KB_EMULATION_ERGOL
+#endif
+
+#ifdef KBSET_KB_EMULATION_DVORAK
+  #define KB_EMULATION_DVORAK
+  #undef KBSET_KB_EMULATION_DVORAK
+#endif
+
+#ifdef KBSET_KB_EMULATION_ERGOL
+  #define KB_EMULATION_ERGOL
+  #undef KBSET_KB_EMULATION_ERGOL
+#endif
+
+#ifdef KBSET_MACOS
+  #undef MACOS
+  #define MACOS
+  #undef KBSET_MACOS
+#endif
+
+#if defined KBSET_HT_NONE || defined KBSET_HT_THUMB_TAPS || defined KBSET_HT_HOME_ROW_MODS || defined KBSET_HT_TWO_THUMB_KEYS
+  #undef HT_NONE
+  #undef HT_THUMB_TAPS
+  #undef HT_HOME_ROW_MODS
+  #undef HT_TWO_THUMB_KEYS
+#endif
+
+#ifdef KBSET_HT_NONE
+  #define HT_NONE
+  #undef KBSET_HT_NONE
+#endif
+
+#ifdef KBSET_HT_THUMB_TAPS
+  #define HT_THUMB_TAPS
+  #undef KBSET_HT_THUMB_TAPS
+#endif
+
+#ifdef KBSET_HT_HOME_ROW_MODS
+  #define HT_HOME_ROW_MODS
+  #undef KBSET_HT_HOME_ROW_MODS
+#endif
+
+#ifdef KBSET_HT_TWO_THUMB_KEYS
+  #define HT_TWO_THUMB_KEYS
+  #undef KBSET_HT_TWO_THUMB_KEYS
+#endif
+
+#ifdef KBSET_TAPPING_TERM
+  #undef TAPPING_TERM
+  #define TAPPING_TERM KBSET_TAPPING_TERM
+  #undef KBSET_TAPPING_TERM
+#endif
+
+#ifdef KBSET_SHORT_TAPPING_TERM
+  #undef SHORT_TAPPING_TERM
+  #define SHORT_TAPPING_TERM KBSET_SHORT_TAPPING_TERM
+  #undef KBSET_SHORT_TAPPING_TERM
+#endif
+
+#ifdef KBSET_QUICK_TAP
+  #undef QUICK_TAP
+  #define QUICK_TAP KBSET_QUICK_TAP
+  #undef KBSET_QUICK_TAP
+#endif
+
+#ifdef KBSET_VIM_NAVIGATION
+  #undef VIM_NAVIGATION
+  #define VIM_NAVIGATION
+  #undef KBSET_VIM_NAVIGATION
+#endif
+
+#ifdef KBSET_HRM_SHIFT
+  #undef HRM_SHIFT
+  #define HRM_SHIFT
+  #undef KBSET_HRM_SHIFT
+#endif
+
+#ifdef KBSET_LEFT_HAND_SPACE
+  #undef LEFT_HAND_SPACE
+  #define LEFT_HAND_SPACE
+  #undef KBSET_LEFT_HAND_SPACE
+#endif
