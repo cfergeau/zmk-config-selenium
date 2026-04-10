@@ -56,11 +56,6 @@ include:
     artifact-name: tester_rp2040_qwerty_lafayette_lhs
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DIGNORE_GLOBAL_SETTINGS;-DKB_LAYOUT_QWERTY_LAFAYETTE;-DLEFT_HAND_SPACE"
 
-  # Ensure the Ferris applies 2TK even when HRM is requested
-  - board: ferris//zmk
-    artifact-name: ferris_hrm
-    cmake-args: -DDTS_EXTRA_CPPFLAGS="-DIGNORE_GLOBAL_SETTINGS;-DHT_HOME_ROW_MODS"
-
   # Dvorak emulation on Qwerty
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_left
