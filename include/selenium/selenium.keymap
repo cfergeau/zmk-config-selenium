@@ -39,7 +39,14 @@
       quick-tap-ms = <QUICK_TAP>;
       bindings = <&mo>, <&kp>;
       display-name = "Layer-Tap";
-      };
+    };
+    my_sk: my_sticky_key {
+        compatible = "zmk,behavior-sticky-key";
+        #binding-cells = <1>;
+        bindings = <&kp>;
+        release-after-ms = <1000>;
+        quick-release;
+    };
   };
 
   OMIT_IF_NO_REF my_osm: my_one_shot_modifier {
@@ -54,11 +61,13 @@
     #binding-cells = <2>;
     tapping-term-ms = <TAPPING_TERM>;
     flavor = "tap-preferred";
-    bindings = <&kp>, <&my_osm>;
+    bindings = <&kp>, <&my_sk>;
   };
 };
 #define MY_EZ_SK(mod)    my_bsk (mod) (mod)
-//#define MY_EZ_SK(mod)    sk mod
+//#define MY_EZ_SK(mod)    my_sk mod
+// Right: layer tap(VimNav, Space) tapping-term-ms = TAPPING_TERM, quick-tap-ms = QUICK_TAP
+// Left:  sticky key(LShift)
 
 / {
   keymap {
