@@ -35,7 +35,7 @@
     #binding-cells = <1>;
     tap-ms = <0>;
     wait-ms = <0>;
-    bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
+    bindings = <&macro_param_1to1>, <&sk MACRO_PLACEHOLDER>;
   };
   OMIT_IF_NO_REF my_bsk: better_sticky_key {
     compatible = "zmk,behavior-hold-tap";
