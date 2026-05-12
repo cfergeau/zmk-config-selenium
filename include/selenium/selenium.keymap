@@ -45,7 +45,8 @@
     bindings = <&kp>, <&my_osm>;
   };
 };
-#define MY_EZ_SK(mod)    my_bsk (mod) (mod)
+//#define MY_EZ_SK(mod)    my_bsk (mod) (mod)
+#define MY_EZ_SK(mod)    sk mod
 
 / {
   keymap {
