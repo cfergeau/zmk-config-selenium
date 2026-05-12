@@ -25,6 +25,28 @@
  * Beware: missing or misplacing a comma in the definitions below would break the keymap.
  */
 
+// like ZMK's sticky key (sk) but with a more robust timing
+// https://zmk.dev/docs/keymaps/behaviors/macros#keycode-sequences
+// > Here, a wait and tap time of at least 30ms is recommended to avoid having HID notifications grouped at the BLE protocol level and then processed out of order:
+// Could this be a problem below?
+/{
+  OMIT_IF_NO_REF my_osm: one_shot_modifier {
+    compatible = "zmk,behavior-macro-one-param";
+    #binding-cells = <1>;
+    tap-ms = <0>;
+    wait-ms = <0>;
+    bindings = <&macro_param_1to1>, <&macro_tap &sk MACRO_PLACEHOLDER>;
+  };
+  OMIT_IF_NO_REF my_bsk: better_sticky_key {
+    compatible = "zmk,behavior-hold-tap";
+    #binding-cells = <2>;
+    tapping-term-ms = <TAPPING_TERM>;
+    flavor = "tap-preferred";
+    bindings = <&kp>, <&my_osm>;
+  };
+};
+#define MY_EZ_SK(mod)    my_bsk (mod) (mod)
+
 / {
   keymap {
     compatible = "zmk,keymap";
@@ -35,9 +57,9 @@
     base_layer: base_layer {
       display-name = "Base";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
-        LTHUMB_TUCK,  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp Y  &kp U  &kp I     &kp O   &kp P     ,  RTHUMB_HOME   ,
-        LTHUMB_TUCK,  HRM_A  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  RTHUMB_HOME   ,
-        LTHUMB_TUCK,  &kp Z  &kp X  &kp C  &kp V  &kp B   ,   &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  RTHUMB_HOME   ,
+        &MY_EZ_SK(LSHIFT),  &kp Q  &kp W  &kp E  &kp R  &kp T   ,   &kp Y  &kp U  &kp I     &kp O   &kp P     ,  &lt NAV_LAYER SPACE ,
+        &MY_EZ_SK(LSHIFT),  HRM_A  HRM_S  HRM_D  HRM_F  &kp G   ,   &kp H  HRM_J  HRM_K     HRM_L   HRM_SEMI  ,  &lt NAV_LAYER SPACE ,
+        &MY_EZ_SK(LSHIFT),  &kp Z  &kp X  &kp C  &kp V  &kp B   ,   &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH  ,  &lt NAV_LAYER SPACE ,
                LTHUMB_TUCK , LTHUMB_HOME , LTHUMB_REACH   ,   RTHUMB_REACH , RTHUMB_HOME , RTHUMB_TUCK
       )>;
     };
