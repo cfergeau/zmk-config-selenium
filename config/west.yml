@@ -4,16 +4,11 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: keebs34
       url-base: https://github.com/keebs34
-    - name: NuclearSquid
-      url-base: https://github.com/Nuclear-Squid
   projects:
     - name: zmk
       remote: zmkfirmware
       revision: main
       import: app/west.yml
-    - name: zmk-keyboard-quacken
-      remote: NuclearSquid
-      revision: aekeynox_module
     - name: zmk-keyboard-totem
       remote: keebs34
       revision: main

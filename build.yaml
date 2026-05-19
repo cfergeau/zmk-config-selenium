@@ -17,14 +17,6 @@ include:
   # => make sure the `board` field matches the MCU on your keyboard
   ##
 
-  # Quacken Zero + SparkFun RP2040
-  - board: sparkfun_pro_micro_rp2040//zmk
-    shield: quacken_zero
-    artifact-name: quacken_zero
-    snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
-
   # Totem + XIAO BLE
   - board: xiao_ble//zmk
     shield: totem_left
@@ -82,13 +74,6 @@ include:
   ###
   # Standalone Keyboards (onboard MCU)
   ##
-
-  # Quacken Flex (RP2040)
-  - board: quacken_flex/rp2040
-    artifact-name: quacken_flex
-    snippet: studio-rpc-usb-uart
-    cmake-args: >
-      -DCONFIG_ZMK_STUDIO=y
 
   # Ferris (STM32F072)
   # Note: not enough memory for ZMK Studio
