@@ -101,3 +101,8 @@ include:
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
+
+  # Planck
+  - board: planck_rev6
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
