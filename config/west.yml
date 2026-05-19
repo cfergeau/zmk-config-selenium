@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: keebs34
       url-base: https://github.com/keebs34
+    - name: eyelash
+      url-base: https://github.com/a741725193
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -12,5 +14,8 @@ manifest:
     - name: zmk-keyboard-totem
       remote: keebs34
       revision: v0.3-branch
+    - name: zmk-new_corne
+      remote: eyelash
+      revision: main
   self:
     path: config

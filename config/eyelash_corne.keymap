@@ -1,0 +1,10 @@
+#define SELENIUM_KEYMAP_BINDINGS(LOUT1,  LROW1,  RROW1,  ROUT1, \
+                                 LOUT2,  LROW2,  RROW2,  ROUT2, \
+                                 LOUT3,  LROW3,  RROW3,  ROUT3, \
+                                 LT1, LT2, LT3,  RT3, RT2, RT1) \
+    LOUT1     LROW1                                        &kp UP                  RROW1  ROUT1     \
+    LOUT2     LROW2                               &kp LEFT &kp ENTER &kp RIGHT     RROW2  ROUT2     \
+    LOUT3     LROW3         &kp K_PLAY_PAUSE               &kp DOWN                RROW3  ROUT3     \
+                 LT1  LT2  LT3                                          RT3  RT2  RT1
+
+#include "../include/selenium/selenium.keymap"

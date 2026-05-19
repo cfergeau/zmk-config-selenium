@@ -106,3 +106,11 @@ include:
   - board: planck_rev6
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
+
+  # EyeLash Corne
+  - board: eyelash_corne_left
+    shield: nice_view
+    snippet: studio-rpc-usb-uart
+    cmake-args: -DCONFIG_ZMK_STUDIO=y
+  - board: eyelash_corne_right
+    shield: nice_view
