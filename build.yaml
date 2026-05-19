@@ -9,22 +9,22 @@ include:
   # These keebs consist in two parts:
   #  - a shield = the keyboard itself
   #  - a board = the micro-controller unit (MCU), which can be:
-  #    - nice_nano@2 (nice!nano v2)
+  #    - nice_nano_v2 (nice!nano v2)
   #    - sparkfun_pro_micro_rp2040
-  #    - xiao_ble
+  #    - seeeduino_xiao_ble
   #    - ... and many others
   #
   # => make sure the `board` field matches the MCU on your keyboard
   ##
 
   # Totem + XIAO BLE
-  - board: xiao_ble//zmk
+  - board: seeeduino_xiao_ble
     shield: totem_left
     artifact-name: totem_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
-  - board: xiao_ble//zmk
+  - board: seeeduino_xiao_ble
     shield: totem_right
     artifact-name: totem_right
     snippet: studio-rpc-usb-uart
@@ -32,13 +32,13 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
   # Corne + nice!nano v2
-  - board: nice_nano@2//zmk
+  - board: nice_nano_v2
     shield: corne_left
     artifact-name: corne_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano@2//zmk
+  - board: nice_nano_v2
     shield: corne_right
     artifact-name: corne_right
     snippet: studio-rpc-usb-uart
@@ -46,13 +46,13 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
   # Sweep + SparkFun RP2040
-  - board: sparkfun_pro_micro_rp2040//zmk
+  - board: sparkfun_pro_micro_rp2040
     shield: cradio_left
     artifact-name: sweep_left
     snippet: studio-rpc-usb-uart
     cmake-args: >
       -DCONFIG_ZMK_STUDIO=y
-  - board: sparkfun_pro_micro_rp2040//zmk
+  - board: sparkfun_pro_micro_rp2040
     shield: cradio_right
     artifact-name: sweep_right
     snippet: studio-rpc-usb-uart
@@ -60,12 +60,12 @@ include:
       -DCONFIG_ZMK_STUDIO=y
 
   # Lily58 + nice!nano v2
-  - board: nice_nano@2//zmk
+  - board: nice_nano_v2
     shield: lily58_left
     artifact-name: lily58_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: nice_nano@2//zmk
+  - board: nice_nano_v2
     shield: lily58_right
     artifact-name: lily58_right
     snippet: studio-rpc-usb-uart
@@ -77,15 +77,15 @@ include:
 
   # Ferris (STM32F072)
   # Note: not enough memory for ZMK Studio
-  - board: ferris//zmk
+  - board: ferris_rev02
     artifact-name: ferris
 
   # Corneish Zen (nRF52840)
-  - board: corneish_zen_left//zmk
+  - board: corneish_zen_v2_left
     artifact-name: corneish_zen_left
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
-  - board: corneish_zen_right//zmk
+  - board: corneish_zen_v2_right
     artifact-name: corneish_zen_right
     snippet: studio-rpc-usb-uart
     cmake-args: -DCONFIG_ZMK_STUDIO=y
