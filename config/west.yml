@@ -4,6 +4,8 @@ manifest:
       url-base: https://github.com/zmkfirmware
     - name: keebs34
       url-base: https://github.com/keebs34
+    - name: cfergeau
+      url-base: https://github.com/cfergeau
     - name: NuclearSquid
       url-base: https://github.com/Nuclear-Squid
   projects:
@@ -11,6 +13,9 @@ manifest:
       remote: zmkfirmware
       revision: main
       import: app/west.yml
+    - name: zmk-config-klor
+      remote: cfergeau
+      revision: zmk-module
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
       revision: aekeynox_module
