@@ -36,16 +36,16 @@
   #define ALT_CTL LALT
 #endif
 
-#define H_S &hrm GUI_OPT
-#define H_D &hrm CTL_CMD
-#define H_F &hrm ALT_CTL
-#define H_J &hrm ALT_CTL
-#define H_K &hrm CTL_CMD
-#define H_L &hrm GUI_OPT
+#define H_S &lhrm GUI_OPT
+#define H_D &lhrm CTL_CMD
+#define H_F &lhrm ALT_CTL
+#define H_J &rhrm ALT_CTL
+#define H_K &rhrm CTL_CMD
+#define H_L &rhrm GUI_OPT
 
 #ifdef HRM_SHIFT
-  #define H_A    &hrm LSHIFT
-  #define H_SEMI &hrm RSHIFT
+  #define H_A    &lhrm LSHIFT
+  #define H_SEMI &rhrm RSHIFT
 #else
   #define H_A    &kp
   #define H_SEMI &kp
@@ -103,14 +103,14 @@
 #endif
 
 #ifdef LHAND_SPACE
-  #define LTHUMB_TT  &hrm CTL_CMD SPACE
+  #define LTHUMB_TT  &lhrm CTL_CMD SPACE
   #define RTHUMB_TT  &magic_backspace
   #define LTHUMB_HRM &lt NAV_LAYER SPACE
   #define RTHUMB_HRM &magic_backspace
   #define LTHUMB_S34 &lt NAV_LAYER SPACE
   #define RTHUMB_S34 &magic_backspace_34_keys
 #else
-  #define LTHUMB_TT  &hrm CTL_CMD BACKSPACE
+  #define LTHUMB_TT  &lhrm CTL_CMD BACKSPACE
   #define RTHUMB_TT  &magic_space
   #define LTHUMB_HRM NAV_SC NAV_LAYER BACKSPACE
   #define RTHUMB_HRM &lt NAV_LAYER SPACE
@@ -189,6 +189,9 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+    #define lhrm hrm
+    #define rhrm hrm
+
     OMIT_IF_NO_REF sc: space_cadet { // same as lt, but with hold-preferred
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
