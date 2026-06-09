@@ -20,6 +20,8 @@ manifest:
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: urob
+      url-base: https://github.com/urob
 
   projects:
       # We rely on a fork of ZMK for a couple of reasons:
@@ -86,6 +88,11 @@ manifest:
     - name: zmk-keyboard-klor
       remote: keebs34
       revision: ef81d4343d4569e36155a6abea6192c0e4042655
+
+      # A set of helpers used for the timeless HRM support
+    - name: zmk-helpers
+      remote: urob
+      revision: 95edb8f15ef1d1bd8332810555f8cf5837fbdd27
 
   self:
     path: config
