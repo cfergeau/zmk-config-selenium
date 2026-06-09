@@ -81,5 +81,11 @@ manifest:
       remote: rschenk
       revision: 34ca1fc7dc6991475b0c20f2c8361598e7aaeaca
 
+      # KLOR: split ProMicro-compatible shield
+      # A fork of `GEIGEIGEIST`'s ZMK KLOR module, to migrate it to ZMK main
+    - name: zmk-keyboard-klor
+      remote: keebs34
+      revision: ef81d4343d4569e36155a6abea6192c0e4042655
+
   self:
     path: config
