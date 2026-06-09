@@ -2,10 +2,10 @@ manifest:
   remotes:
     - name: zmkfirmware
       url-base: https://github.com/zmkfirmware
-    - name: keebs34
-      url-base: https://github.com/keebs34
     - name: cfergeau
       url-base: https://github.com/cfergeau
+    - name: keebs34
+      url-base: https://github.com/keebs34
     - name: NuclearSquid
       url-base: https://github.com/Nuclear-Squid
     - name: raeedcho
@@ -14,6 +14,8 @@ manifest:
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -22,6 +24,9 @@ manifest:
     - name: zmk-config-klor
       remote: cfergeau
       revision: zmk-module
+    - name: zmk-helpers
+      remote: urob
+      revision: main
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
       revision: main
