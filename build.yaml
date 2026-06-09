@@ -79,6 +79,16 @@ include:
     shield: cradio_right
     artifact-name: sweep_right
 
+     # KLOR
+  - board: nice_nano@2//zmk
+    shield: klor_left
+    artifact-name: klor_left
+    snippet: studio-rpc-usb-uart
+    cmake-args: *cmake-args
+  - board: nice_nano@2//zmk
+    shield: klor_right
+    artifact-name: klor_right
+
     # Lily58 + nice!nano v2
   - board: nice_nano@2//zmk
     shield: lily58_left
