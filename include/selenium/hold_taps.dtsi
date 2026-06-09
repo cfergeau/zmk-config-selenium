@@ -181,6 +181,33 @@
 
 / {
   behaviors {
+#ifdef TIMELESS_HRMS
+    /* Left-hand timeless HRMs. */
+    OMIT_IF_NO_REF lhrm: left_hrm_timeless {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>; // 300 in selenium, 280 in timeless hrm doc
+      quick-tap-ms = <QUICK_TAP>; // 200 in selenium, 175 in timeless hrm doc
+      require-prior-idle-ms = <150>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
+      hold-trigger-on-release;
+    };
+
+    /* Right-hand timeless HRMs. */
+    OMIT_IF_NO_REF rhrm: right_hrm_timeless {
+      compatible = "zmk,behavior-hold-tap";
+      #binding-cells = <2>;
+      tapping-term-ms = <TAPPING_TERM>; // 300 in selenium, 280 in timeless hrm doc
+      quick-tap-ms = <QUICK_TAP>; // 200 in selenium, 175 in timeless hrm doc
+      require-prior-idle-ms = <150>;
+      flavor = "balanced";
+      bindings = <&kp>, <&kp>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
+      hold-trigger-on-release;
+    };
+#else // !TIMELESS_HRMS
     OMIT_IF_NO_REF hrm: homerow_mods {
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
@@ -191,6 +218,7 @@
     };
     #define lhrm hrm
     #define rhrm hrm
+#endif
 
     OMIT_IF_NO_REF sc: space_cadet { // same as lt, but with hold-preferred
       compatible = "zmk,behavior-hold-tap";
