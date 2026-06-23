@@ -202,7 +202,7 @@
       require-prior-idle-ms = <TIMELESS_PRIOR_IDLE>;
       flavor = "balanced";
       bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <KEYS_R>;
+      hold-trigger-key-positions = <KEYS_R THUMBS>;
       hold-trigger-on-release;
     };
 
@@ -215,7 +215,7 @@
       require-prior-idle-ms = <TIMELESS_PRIOR_IDLE>;
       flavor = "balanced";
       bindings = <&kp>, <&kp>;
-      hold-trigger-key-positions = <KEYS_L>;
+      hold-trigger-key-positions = <KEYS_L THUMBS>;
       hold-trigger-on-release;
     };
 #else // !TIMELESS_HRMS
