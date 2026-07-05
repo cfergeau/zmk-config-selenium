@@ -12,6 +12,8 @@ manifest:
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
+    - name: urob
+      url-base: https://github.com/urob
   projects:
     - name: zmk
       remote: zmkfirmware
@@ -31,6 +33,9 @@ manifest:
       revision: main
     - name: zmk-keyboard-re-gret
       remote: rschenk
+      revision: main
+    - name: zmk-leader-key
+      remote: urob
       revision: main
   self:
     path: config
