@@ -1,0 +1,204 @@
+#include <dt-bindings/zmk/outputs.h>
+
+// (L)ayout to QWERTY
+
+#ifdef KB_LAYOUT_DVORAK
+#define L_A A
+#define L_B N
+#define L_C I
+#define L_D H
+#define L_E D
+#define L_F Y
+#define L_G U
+#define L_H J
+#define L_I G
+#define L_J C
+#define L_K V
+#define L_L P
+#define L_M M
+#define L_N L
+#define L_O S
+#define L_P R
+#define L_Q X
+#define L_R O
+#define L_S SEMICOLON
+#define L_T K
+#define L_U F
+#define L_V PERIOD
+#define L_W COMMA
+#define L_X B
+#define L_Y T
+#define L_Z SLASH
+
+#elifdef KB_LAYOUT_AZERTY
+#define L_A Q
+#define L_B B
+#define L_C C
+#define L_D D
+#define L_E E
+#define L_F F
+#define L_G G
+#define L_H H
+#define L_I I
+#define L_J J
+#define L_K K
+#define L_L L
+#define L_M SEMI
+#define L_N N
+#define L_O O
+#define L_P P
+#define L_Q A
+#define L_R R
+#define L_S S
+#define L_T T
+#define L_U U
+#define L_V V
+#define L_W Z
+#define L_X X
+#define L_Y Y
+#define L_Z W
+
+#elifdef KB_LAYOUT_ERGOL
+#define L_A A
+#define L_B B
+#define L_C W
+#define L_D I
+#define L_E D
+#define L_F G
+#define L_G COMMA
+#define L_H M
+#define L_I L
+#define L_J Y
+#define L_K SLASH
+#define L_L H
+#define L_M U
+#define L_N F
+#define L_O E
+#define L_P R
+#define L_Q Q
+#define L_R J
+#define L_S S
+#define L_T K
+#define L_U SEMI
+#define L_V V
+#define L_W T
+#define L_X X
+#define L_Y P
+#define L_Z Z
+
+#elifdef KB_LAYOUT_ERGLACE
+#define L_A S
+#define L_B N
+#define L_C O
+#define L_D M
+#define L_E D
+#define L_F R
+#define L_G H
+#define L_H V
+#define L_I A
+#define L_J Z
+#define L_K T
+#define L_L I
+#define L_M COMMA
+#define L_N K
+#define L_O E
+#define L_P U
+#define L_Q P
+#define L_R SEMICOLON
+#define L_S L
+#define L_T J
+#define L_U F
+#define L_V Y
+#define L_W PERIOD
+#define L_X SLASH
+#define L_Y Q
+#define L_Z B
+
+#elif defined(KB_LAYOUT_BEPO) || defined(KB_LAYOUT_BEPOLAR)
+#define L_A A
+#define L_B Q
+#define L_C H
+#define L_D I
+#define L_E F
+#define L_F SLASH
+#define L_G COMMA
+#define L_H PERIOD
+#define L_I D
+#define L_J P
+#define L_K B
+#define L_L O
+#ifdef KB_LAYOUT_BEPO
+  #define L_M SINGLE_QUOTE
+#else // KB_LAYOUT_BEPOLAR
+  #define L_M W
+#endif
+#define L_N SEMICOLON
+#define L_O R
+#define L_P E
+#define L_Q M
+#define L_R L
+#define L_S K
+#define L_T J
+#define L_U S
+#define L_V U
+#ifdef KB_LAYOUT_BEPO
+  #define L_W RIGHT_BRACKET
+#else // KB_LAYOUT_BEPOLAR
+  #define L_W T
+#endif
+#define L_X C
+#define L_Y X
+#ifdef KB_LAYOUT_BEPO
+  #define L_Z LEFT_BRACKET
+#else // KB_LAYOUT_BEPOLAR
+  #define L_Z Y
+#endif
+
+
+#else // defined(KB_LAYOUT_QWERTY) || defined(KB_LAYOUT_QWERTY_INTL) || defined(KB_LAYOUT_QWERTY_LAFAYETTE)
+#define L_A A
+#define L_B B
+#define L_C C
+#define L_D D
+#define L_E E
+#define L_F F
+#define L_G G
+#define L_H H
+#define L_I I
+#define L_J J
+#define L_K K
+#define L_L L
+#define L_M M
+#define L_N N
+#define L_O O
+#define L_P P
+#define L_Q Q
+#define L_R R
+#define L_S S
+#define L_T T
+#define L_U U
+#define L_V V
+#define L_W W
+#define L_X X
+#define L_Y Y
+#define L_Z Z
+#endif // KB_LAYOUT_QWERTY || KB_LAYOUT_QWERTY_INTL || KB_LAYOUT_QWERTY_LAFAYETTE
+
+/ {
+  behaviors {
+    sys_leader: sys_leader {
+      compatible = "zmk,behavior-leader-key";
+      #binding-cells = <0>;
+      ignore-keys = <LSHFT RSHFT>;
+      usb { sequence = <L_U L_S L_B>; bindings = <&out OUT_USB>; };
+      ble { sequence = <L_B L_L L_E>; bindings = <&out OUT_BLE>; };
+      bt0 { sequence = <L_B N0>; bindings = <&bt BT_SEL 0>; };
+      bt1 { sequence = <L_B N1>; bindings = <&bt BT_SEL 1>; };
+      bt2 { sequence = <L_B N2>; bindings = <&bt BT_SEL 2>; };
+      btc { sequence = <L_C L_L L_E L_A L_R>; bindings = <&bt BT_CLR>; };
+      boot { sequence = <L_B L_O L_O L_T>; bindings = <&bootloader>; };
+      reset { sequence = <L_R L_E L_S L_E L_T>; bindings = <&sys_reset>; };
+      studio { sequence = <L_S L_T L_D L_I L_O>; bindings = <&studio_unlock>; }; // no U as CONFIG_ZMK_LEADER_MAX_KEYS_PER_SEQUENCE defaults to 5
+    };
+  };
+};

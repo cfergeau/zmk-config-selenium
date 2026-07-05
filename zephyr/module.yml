@@ -1,6 +1,8 @@
 name: zmk-config-selenium
 build:
   cmake: .
+  depends:
+    - zmk-leader-key
   kconfig: Kconfig
   settings:
     dts_root: .
