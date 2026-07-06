@@ -14,6 +14,12 @@
 #include "hold_taps.dtsi" // defines thumb keys and homerow mods
 #include "leader.dtsi"    // defines key sequences to trigger various low-level changes
 
+// might be enough?
+&caps_word {
+	no-default-keys;
+	continue-list = <L_A L_B L_C L_D L_E L_F L_G L_H L_I L_J L_K L_L L_M L_N L_O L_P L_Q L_R L_S L_T L_U L_V L_W L_X L_Y L_Z>;
+};
+
 /**
  * All keyboard layers are defined by blocks on a 42-key basis, as follows:
  *
