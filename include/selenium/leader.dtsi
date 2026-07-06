@@ -3,7 +3,6 @@
 // (L)ayout to QWERTY
 
 #ifdef KB_LAYOUT_DVORAK
-#error dvorak
 #define L_A A
 #define L_B N
 #define L_C I
@@ -32,7 +31,6 @@
 #define L_Z SLASH
 
 #elifdef KB_LAYOUT_AZERTY
-#error azerty
 #define L_A Q
 #define L_B B
 #define L_C C
@@ -61,7 +59,6 @@
 #define L_Z W
 
 #elifdef KB_LAYOUT_ERGOL
-#error ergol
 #define L_A A
 #define L_B B
 #define L_C W
@@ -90,7 +87,6 @@
 #define L_Z Z
 
 #elifdef KB_LAYOUT_ERGLACE
-#error erglace
 #define L_A S
 #define L_B N
 #define L_C O
@@ -119,7 +115,6 @@
 #define L_Z B
 
 #elif defined(KB_LAYOUT_BEPO) || defined(KB_LAYOUT_BEPOLAR)
-#error bepo
 #define L_A A
 #define L_B Q
 #define L_C H
@@ -161,7 +156,6 @@
 
 
 #else // defined(KB_LAYOUT_QWERTY) || defined(KB_LAYOUT_QWERTY_INTL) || defined(KB_LAYOUT_QWERTY_LAFAYETTE)
-#error qwerty
 #define L_A A
 #define L_B B
 #define L_C C
