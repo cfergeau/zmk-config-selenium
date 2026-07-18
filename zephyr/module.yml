@@ -2,6 +2,7 @@ name: zmk-config-selenium
 build:
   cmake: .
   depends:
+    - zmk-auto-layer
     - zmk-leader-key
   kconfig: Kconfig
   settings:

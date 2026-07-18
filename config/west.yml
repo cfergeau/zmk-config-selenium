@@ -34,6 +34,9 @@ manifest:
     - name: zmk-keyboard-re-gret
       remote: rschenk
       revision: main
+    - name: zmk-auto-layer
+      remote: urob
+      revision: main
     - name: zmk-leader-key
       remote: urob
       revision: main
