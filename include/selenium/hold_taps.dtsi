@@ -37,29 +37,43 @@
 // Unconditionnal home row mods, needed by the fn/media layer, since combining
 // modifiers on the thumb-taps variant with this layer can be tricky.
 // Hopefully, this issue can be cleanly resolved with mod-holds someday.
-#define UH1 hrm ALT_CTL
-#define UH2 hrm CTL_CMD
-#define UH3 hrm GUI_OPT
-#define UH4 hrm LSHIFT
+#define ULH1 hrm ALT_CTL
+#define ULH2 hrm CTL_CMD
+#define ULH3 hrm GUI_OPT
+#define ULH4 hrm LSHIFT
+#define URH1 hrm ALT_CTL
+#define URH2 hrm CTL_CMD
+#define URH3 hrm GUI_OPT
+#define URH4 hrm LSHIFT
 
 #ifdef ENABLE_HOME_ROW_MODS
-  #define H1 hrm ALT_CTL
-  #define H2 hrm CTL_CMD
-  #define H3 hrm GUI_OPT
+  #define LH1 lhrm ALT_CTL
+  #define LH2 lhrm CTL_CMD
+  #define LH3 lhrm GUI_OPT
+  #define RH1 rhrm ALT_CTL
+  #define RH2 rhrm CTL_CMD
+  #define RH3 rhrm GUI_OPT
 #else
-  #define H1 kp
-  #define H2 kp
-  #define H3 kp
+  #define LH1 kp
+  #define LH2 kp
+  #define LH3 kp
+  #define RH1 kp
+  #define RH2 kp
+  #define RH3 kp
 #endif
 
 #if defined HRM_SHIFT && defined PINKY_MOD_HOLD
-  #define H4 mhhrm LSHIFT
+  #define LH4 mhlhrm LSHIFT
+  #define RH4 mhrhrm LSHIFT
 #elif defined HRM_SHIFT
-  #define H4 hrm LSHIFT
+  #define LH4 lhrm LSHIFT
+  #define RH4 rhrm LSHIFT
 #elif defined PINKY_MOD_HOLD
-  #define H4 mhkp 0
+  #define LH4 mhkp 0
+  #define RH4 mhkp 0
 #else
-  #define H4 kp
+  #define LH4 kp
+  #define RH4 kp
 #endif
 
 /**
@@ -99,14 +113,14 @@
 #endif
 
 #ifdef LHAND_SPACE
-  #define LTHUMB_TT  &hrm CTL_CMD SPACE
+  #define LTHUMB_TT  &lhrm CTL_CMD SPACE
   #define RTHUMB_TT  &magic_backspace
   #define LTHUMB_HRM &lt NAV_LAYER SPACE
   #define RTHUMB_HRM &magic_backspace
   #define LTHUMB_S34 &lt NAV_LAYER SPACE
   #define RTHUMB_S34 &magic_backspace_34_keys
 #else
-  #define LTHUMB_TT  &hrm CTL_CMD BACKSPACE
+  #define LTHUMB_TT  &rhrm CTL_CMD BACKSPACE
   #define RTHUMB_TT  &magic_space
   #define LTHUMB_HRM NAV_SC NAV_LAYER BACKSPACE
   #define RTHUMB_HRM &lt NAV_LAYER SPACE
@@ -185,6 +199,8 @@
       flavor = "tap-preferred";
       bindings = <&kp>, <&kp>;
     };
+    #define lhrm hrm
+    #define rhrm hrm
     OMIT_IF_NO_REF sc: space_cadet { // same as lt, but with hold-preferred
       compatible = "zmk,behavior-hold-tap";
       #binding-cells = <2>;
@@ -333,7 +349,8 @@
 
     MOD_HOLD_0(mh, &none, MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)
     MOD_HOLD_1(mhsc, &sc, MOD_LALT)
-    MOD_HOLD_2(mhhrm, &hrm, MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)
+    MOD_HOLD_2(mhlhrm, &hrm, MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)
+    MOD_HOLD_2(mhrhrm, &hrm, MOD_LCTL|MOD_RCTL|MOD_LALT|MOD_RALT|MOD_LGUI|MOD_RGUI)
 
     OMIT_IF_NO_REF mhkp: hrm_with_raw_mh_on_hold {
       compatible = "zmk,behavior-hold-tap";
