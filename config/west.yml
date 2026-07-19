@@ -1,7 +1,5 @@
 manifest:
   remotes:
-    - name: zmkfirmware
-      url-base: https://github.com/zmkfirmware
     - name: keebs34
       url-base: https://github.com/keebs34
     - name: NuclearSquid
@@ -12,13 +10,7 @@ manifest:
       url-base: https://github.com/rloutier
     - name: rschenk
       url-base: https://github.com/rschenk
-    - name: urob
-      url-base: https://github.com/urob
   projects:
-    - name: zmk
-      remote: zmkfirmware
-      revision: main
-      import: app/west.yml
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
       revision: main
@@ -34,8 +26,6 @@ manifest:
     - name: zmk-keyboard-re-gret
       remote: rschenk
       revision: main
-    - name: zmk-leader-key
-      remote: urob
-      revision: main
   self:
     path: config
+    import: west-module.yml
