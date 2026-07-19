@@ -14,12 +14,10 @@ manifest:
       url-base: https://github.com/rschenk
     - name: urob
       url-base: https://github.com/urob
-    - name: cfergeau
-      url-base: https://github.com/cfergeau
   projects:
     - name: zmk
-      remote: cfergeau
-      revision: caps-word-1742
+      remote: zmkfirmware
+      revision: main
       import: app/west.yml
     - name: zmk-keyboard-quacken
       remote: NuclearSquid
