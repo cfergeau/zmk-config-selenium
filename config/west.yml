@@ -12,18 +12,23 @@ manifest:
       url-base: https://github.com/rschenk
   projects:
     - name: zmk-keyboard-quacken
+      path: modules/keyboards/quacken
       remote: NuclearSquid
       revision: main
     - name: zmk-keyboard-totem
+      path: modules/keyboards/totem
       remote: keebs34
       revision: main
     - name: temper-zmk-config
+      path: modules/keyboards/temper
       remote: raeedcho
       revision: main
     - name: zmk-config-go60
+      path: modules/keyboards/go60
       remote: rloutier
       revision: main
     - name: zmk-keyboard-re-gret
+      path: modules/keyboards/re-gret
       remote: rschenk
       revision: main
   self:
