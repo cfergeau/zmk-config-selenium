@@ -64,7 +64,7 @@
       )>;
     };
 
-    // 2. Symbols layer -- with Ergol, basically just an AltGr layer with custom thumb keys
+    // 2. Symbols layer -- with Ergo-L, basically just an AltGr layer with custom thumb keys
     //                  -- can be redefined for non-AltGr layouts such as QWERTY-ANSI
     symbols_layer: symbols_layer {
       display-name = "Symbols";
@@ -78,7 +78,7 @@
 
     // 3. VimNav layer -- HJKL arrow cluster on the right hand
     //                 -- best used along with the NumRow layer
-    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
+    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergo-L here)
     vim_nav_layer: vim_nav_layer {
       display-name = "VimNav";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
@@ -91,7 +91,7 @@
 
     // 4. NavNum layer -- inverted T arrow cluster on the left hand, numpad on the right hand
     //                 -- can be the only extra layer you need if you're not too picky with number+symbols n-grams
-    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
+    //                 -- keyboard shortcuts on the left hand are adjusted to the OS layout (Ergo-L here)
     nav_num_layer: nav_num_layer {
       display-name = "NavNum";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
@@ -104,7 +104,7 @@
 
     // 5. CalTee layer -- one-shot mods on the left hand, inverted T arrow cluster on the right hand
     //                 -- best used along with the NumRow layer
-    //                 -- some keyboard shortcuts on the left hand are adjusted to the OS layout (Ergol here)
+    //                 -- some keyboard shortcuts on the left hand are adjusted to the OS layout (Ergo-L here)
     cal_tee_layer: cal_tee_layer {
       display-name = "CalTee";
       bindings = <SELENIUM_KEYMAP_BINDINGS(
@@ -116,7 +116,7 @@
     };
 
     // 6. NumRow layer -- bring the numbers to the homerow, keep shift+numbers for shortcuts and symbols
-    //                 -- space becomes shift+space, which is a no-break space with some OS layouts (e.g. Ergol)
+    //                 -- space becomes shift+space, which is a no-break space with some OS layouts (e.g. Ergo-L)
     //                 -- best used along with the VimNav layer
     num_row_layer: num_row_layer {
       display-name = "NumRow";
@@ -158,7 +158,7 @@
 #elif defined KB_EMULATION_QWERTY_LAFAYETTE
   #include "emulations/qwerty_lafayette.dtsi"
 
-// Experimental Ergol variant for Hummingbird-style keyboards
+// Experimental Ergo-L variant for Hummingbird-style keyboards
 #elif defined KB_LAYOUT_ERGOL && defined ENABLE_HUMMINGBIRD_MODE
   #include "extra_layers/ergol_hummingbird.dtsi"
 
