@@ -1,5 +1,5 @@
 /**
- * By default, Selenium defines keymap bindings for 3x6+3 keyboards (42 keys), as folows:
+ * By default, Selenium defines keymap bindings for 3x6+3 keyboards (42 keys), as follows:
  *
  *   Tab   , QWERT , YUIOP , BkSpc ,             LOUT1,  LROW1,  RROW1,  ROUT1,
  *   Esc   , ASDFG , HJKL: , Enter ,      =>     LOUT2,  LROW2,  RROW2,  ROUT2,
