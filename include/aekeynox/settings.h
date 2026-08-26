@@ -14,7 +14,7 @@
 // #define KB_LAYOUT_BEPO              // France
 // #define KB_LAYOUT_BEPOLAR           // France
 // #define KB_LAYOUT_DVORAK            // US
-// #define KB_LAYOUT_ERGOL             // France
+#define KB_LAYOUT_ERGOL                // France
 // #define KB_LAYOUT_ERGLACE           // France
 // #define KB_LAYOUT_QWERTY_BR         // Brazil
 // #define KB_LAYOUT_QWERTY_DK         // Denmark
@@ -42,7 +42,7 @@
 // Uncomment one of the following lines if the host computer doen't run Windows.
 
 // #define MACOS
-// #define LINUX
+#define LINUX
 
 
 /******************************************************************************
@@ -106,7 +106,7 @@
 
 // #define HT_NONE
 // #define HT_THUMB_TAPS
-// #define HT_HOME_ROW_MODS  // (default behavior)
+#define HT_HOME_ROW_MODS  // (default behavior)
 // #define HT_TWO_THUMB_KEYS
 
 // Timing is key! Keep the default value if unsure.
@@ -144,7 +144,7 @@
 //  + Escape under the left thumb (direct access)
 // Highly recommended for Vim users, obviously. :-)
 
-// #define VIM_NAVIGATION
+#define VIM_NAVIGATION
 
 // [Experimental]
 // Uncomment the following line to enable the Callum variant of the previous
@@ -163,7 +163,7 @@
 // Uncomment the following line to enable shift as a pinky HRM.
 // Useful for combined shortcuts, but NOT MEANT to type text!
 
-// #define HRM_SHIFT
+#define HRM_SHIFT
 
 // [Experimental]
 // Uncomment the following line to enable a mod-hold behavior when holding
