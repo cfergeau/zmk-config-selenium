@@ -23,7 +23,7 @@ include:
     artifact-name: qwerty_vim_shift
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DVIM_NAVIGATION;-DHRM_SHIFT"
 
-    # Ergol + Hummingbird
+    # Ergo-L + Hummingbird
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_left
     artifact-name: ergol_hummingbird
@@ -206,13 +206,13 @@ include:
     artifact-name: qwerty_to_dvorak
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_QWERTY;-DKB_EMULATION_DVORAK"
 
-    # Ergol on AZERTY
+    # Ergo-L on AZERTY
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_left
     artifact-name: azerty_to_ergol
     cmake-args: -DDTS_EXTRA_CPPFLAGS="-DCI_IGNORE_USER_SETTINGS;-DKB_LAYOUT_AZERTY;-DKB_EMULATION_ERGOL"
 
-    # Ergol on QWERTY-intl
+    # Ergo-L on QWERTY-intl
   - board: sparkfun_pro_micro_rp2040//zmk
     shield: corne_left
     artifact-name: qwerty_intl_to_ergol

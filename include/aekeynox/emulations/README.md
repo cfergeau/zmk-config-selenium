@@ -51,7 +51,7 @@ That’s our emulation target.
 - Local layouts (AZERTY, QWERTZ, non-US QWERTY variants…) are good emulation targets as well.
   Not as versatile as QWERTY-intl, but they’re the local default.
 
-As an example, to emulate Ergol for AZERTY hosts, uncomment these two lines:
+As an example, to emulate Ergo-L for AZERTY hosts, uncomment these two lines:
 
 ```c
 #define KB_LAYOUT_AZERTY
