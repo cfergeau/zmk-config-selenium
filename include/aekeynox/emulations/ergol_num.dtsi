@@ -1,4 +1,4 @@
-// hybrid Ergol/Lafayette NumRow
+// hybrid Ergo-L/Lafayette NumRow
 &num_row_layer {
   display-name = "NumRow";
   bindings = <SELENIUM_KEYMAP_BINDINGS(
@@ -9,7 +9,7 @@
   )>;
 };
 
-// hybrid Ergol/Lafayette NumPad
+// hybrid Ergo-L/Lafayette NumPad
 / {
   behaviors {
     TWO_LEVEL_KEY(nm1, S_N1, C_EURO)
