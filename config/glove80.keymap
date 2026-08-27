@@ -10,4 +10,4 @@
     &none     &none  &none  &kp LEFT &kp RIGHT  LT1  LT2  LT3 RT3  RT2  RT1  &kp UP &kp DOWN  \
                                                  &none  &none  &none
 
-#include <aekeynox/selenium.keymap>
+#include <selenium/selenium.keymap>

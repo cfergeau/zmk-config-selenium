@@ -1,9 +1,10 @@
-Ækeynox
+zmk-config-selenium
 ====================================================================================================
 
-Reference ZMK implementation of the [Arsenik] and [Selenium] keymaps,
-with first-class support for non-QWERTY layouts.
+Alternative to [Ækeynox], the reference ZMK implementation of the [Arsenik] and
+[Selenium] keymaps, with first-class support for non-QWERTY layouts.
 
+[Ækeynox]:      https://github.com/OneDeadKey/zmk-config-aekeynox
 [Arsenik]:      https://github.com/OneDeadKey/arsenik
 [Selenium]:     https://github.com/OneDeadKey/selenium
 [Selenium 2TK]: https://github.com/OneDeadKey/selenium/raw/main/selenium.png "Selenium, 2TK flavor"
@@ -30,10 +31,10 @@ In a Nutshell
 This repository allows to build your firmware with GitHub Actions (GHA):
 
 1. [create a GitHub account](https://github.com/signup) if you don’t already have one
-2. [fork](https://github.com/OneDeadKey/zmk-config-aekeynox/fork) this repository
+2. [fork](https://github.com/keebs34/zmk-config-config/fork) this repository
 3. on your fork’s GitHub page, visit the Actions tab to enable workflows<br>
    *(by default, they are disabled on newly created forks)*
-4. set your configuration in [`include/aekeynox/settings.h`](#keymapssettingsh)<br>
+4. set your configuration in [`include/selenium/settings.h`](#keymapssettingsh)<br>
    *(this step is **required** for non-QWERTY layouts)*
 5. make sure your keyboard is configured properly in [`build.yaml`](#buildyaml)<br>
    *(this step is **required** for composite keebs based on Pro Micro, XIAO, etc.)*
@@ -56,13 +57,13 @@ More info [in the ZMK documentation](https://zmk.dev/docs/troubleshooting/connec
 Configuration
 ----------------------------------------------------------------------------------------------------
 
-### Keymap Customization: [`include/aekeynox/`](include/aekeynox)
+### Keymap Customization: [`include/selenium/`](include/selenium)
 
 This is where your keymap options can be safely selected:
 
 - which keyboard layout you use:
   - either by setting your keeb for the layout on the host computer
-  - or by [emulating a keyboard layout](include/aekeynox/emulations#layout-emulations)
+  - or by [emulating a keyboard layout](include/selenium/emulations#layout-emulations)
     on devices running the local default layout (computers, tablets, phones…)
 
 - which hold-tap flavor you prefer:
@@ -102,14 +103,14 @@ model, thinking it will be easier to use, but these big keebs are only marginall
 break the holy 1DFH rule: *“1u Distance From Home”*. 3×6 and 3×5 keebs are much more comfortable,
 and just as easy with non-ASCII layouts.
 
-Ækeynox aims to support all major variants of AZERTY, QWERTY, QWERTZ and more.
+Selenium aims to support all major variants of AZERTY, QWERTY, QWERTZ and more.
 It has sane presets for European languages, relying on a simple concept:
 
 - the 3×10 grid is dedicated to the common AZERTY / QWERTY / QWERTZ basis, extra columns are
   reserved for special keys (Escape, Enter…);
 - one key on the 3×10 grid (usually the rightmost key in the home row) is turned into a one-shot
   layer key, to access all your language-specific chars;
-- Ækeynox already has several pre-defined extra layers, which have been carefully optimized to
+- Selenium already has several pre-defined extra layers, which have been carefully optimized to
   match your language.
 
 The idea comes from the [QWERTY-1dk](https://github.com/OneDeadKey/1dk) project, which has been used
@@ -128,7 +129,7 @@ Any name containing `key` and easy to search would’ve been a good fit, but her
 ![My name is Nox and I approve this project.](nox.jpg)
 
 
-[keymap configuration guide]:  include/aekeynox#keymap-configuration-guide
-[supported host layouts]:      include/aekeynox/aliases#layout-aliases
-[proposed 1dk adaptations]:    include/aekeynox/extra_layers#1dk-adaptations
-[supported layout emulations]: include/aekeynox/emulations#layout-emulations
+[keymap configuration guide]:  include/selenium/#keymap-configuration-guide
+[supported host layouts]:      include/selenium/aliases#layout-aliases
+[proposed 1dk adaptations]:    include/selenium/extra_layers#1dk-adaptations
+[supported layout emulations]: include/selenium/emulations#layout-emulations
