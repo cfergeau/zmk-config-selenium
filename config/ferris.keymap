@@ -17,4 +17,4 @@
 // Ensure memory-consuming features will be disabled.
 #define LOW_MEMORY_DEVICE
 
-#include <aekeynox/selenium.keymap>
+#include <selenium/selenium.keymap>

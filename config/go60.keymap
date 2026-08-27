@@ -9,4 +9,4 @@
                      &none  &none  &none                &none  &none  &none                   \
                                 LT1  LT2  LT3      RT3  RT2  RT1
 
-#include <aekeynox/selenium.keymap>
+#include <selenium/selenium.keymap>

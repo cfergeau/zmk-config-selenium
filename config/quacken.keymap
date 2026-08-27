@@ -1,4 +1,4 @@
-#include <aekeynox/selenium.keymap>
+#include <selenium/selenium.keymap>
 
 // The fork of ZMK we rely on adds a redirection-table feature. This allows the
 // user to easilly adapt the keymap to non-standard key configurations. Here are

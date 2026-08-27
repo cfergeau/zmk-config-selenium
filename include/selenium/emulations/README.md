@@ -21,7 +21,7 @@ ASCII Layouts
 Keyboard layouts that are optimized for English are usually just a rearrangement of QWERTY keys:
 Dvorak, Colemak, Workman, Sturdy… all these layouts can be perfectly emulated by the keyboard.
 
-To emulate Dvorak for QWERTY hosts, just uncomment this line in `include/aekeynox/settings.h`:
+To emulate Dvorak for QWERTY hosts, just uncomment this line in `include/selenium/settings.h`:
 
 ```c
 #define KB_EMULATION_DVORAK
