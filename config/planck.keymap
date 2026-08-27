@@ -12,4 +12,4 @@
     LOUT3     LROW3                                                  RROW3  ROUT3     \
     &none     &none   &none  LT1  LT2  LT3      RT3  RT2  RT1  &none &none  &none
 
-#include <aekeynox/selenium.keymap>
+#include <selenium/selenium.keymap>

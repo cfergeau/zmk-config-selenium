@@ -8,7 +8,7 @@ assignees: ''
 ---
 
 ## Checklist before opening
-- [ ] You have read the [README](https://github.com/OneDeadKey/zmk-config-aekeynox/)
+- [ ] You have read the [README](https://github.com/keebs34/zmk-config-selenium/)
 - [ ] The `KB_LAYOUT_*` setting matches the keyboard layout on your computer
 - [ ] The `KB_EMULATION_*` setting is enabled only if needed
 

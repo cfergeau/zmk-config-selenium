@@ -491,7 +491,7 @@ columns. Here’s the default configuration:
 ```
 
 Depending on your main language, you might want to adjust the position of these
-four extra keys in the `/include/aekeynox/outer_keys.h` file.
+four extra keys in the `/include/selenium/outer_keys.h` file.
 
 ### Non-ASCII Layouts
 
@@ -510,7 +510,7 @@ with lateral pinky extensions:
     |---------------|---------------|
 ```
 
-On QWERTZ-de, `ß` would be missing, but `/include/aekeynox/outer_keys.h` could
+On QWERTZ-de, `ß` would be missing, but `/include/selenium/outer_keys.h` could
 be customized to include it under the left pinky.
 
 ```

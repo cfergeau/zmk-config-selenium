@@ -19,4 +19,4 @@
 // Ensure the Arsenik hold-taps are selected.
 #define THREE_THUMB_KEYS
 
-#include <aekeynox/selenium.keymap>
+#include <selenium/selenium.keymap>
