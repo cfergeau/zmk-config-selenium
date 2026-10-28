@@ -164,7 +164,6 @@ include:
   - board: go60_rh
     artifact-name: go60_right
 
-
   ###
   # BLE Resets
   #
